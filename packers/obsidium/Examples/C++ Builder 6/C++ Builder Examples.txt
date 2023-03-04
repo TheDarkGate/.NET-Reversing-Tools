@@ -1,0 +1,19 @@
+Keygen Sample
+    Key generation example application, shows how to use 
+    GenerateKeyfile, VerifyKeyfile
+Sample Application
+    Sample application using short license keys, shows how to
+    use isRegistered, getRegInfo, setShortKey, runtime code
+    encryption
+Short Keygen Sample
+    Short license key generation example application, shows
+    how to use GenerateShortKey, VerifyShortKey
+    
+How to compile:
+
+- Use the IMPLIB tool (included with C++ Builder) to create the library files:
+  implib dummy.lib dummy.dll
+  or
+  implib keygen.lib keygen.dll
+  and copy the resulting .lib files to the application directory
+- The library and header files have already been added to the example projects

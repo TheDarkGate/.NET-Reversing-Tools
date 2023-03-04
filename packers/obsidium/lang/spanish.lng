@@ -1,0 +1,440 @@
+[Info]
+LanguageName="Spanish"
+Charset="utf-8"
+Version="1.2"
+
+[frmMain]
+; main window
+Caption="Sistema de protección de sofware Obsidium"
+
+; page selection buttons
+1000.Tooltip="Cargar/guardar archivo proyecto"
+1001.Tooltip="Editar ajustes de proyecto"
+1002.Tooltip="Administración claves"
+1003.Tooltip="Protejer la aplicación"
+1004.Tooltip="Acerca del programa"
+
+; toolbuttons
+1005.Tooltip="Crear nuevo archivo proyecto"
+1006.Tooltip="Cargar archivo proyecto"
+1007.Tooltip="Guardar archivo proyecto"
+1008.Tooltip="Preferencias"
+
+; project management page
+1100.Caption="Administración proyectos"
+1101.Caption="Acción"
+1102.Caption="Información"
+1103.Caption="Nuevo proyecto"
+1103.Tooltip="Crear nuevo proyecto"
+1104.Caption="Crear un nuevo archivo de proyecto. Todos los cambios hechos para el proyecto actual y no guardados se perderan."
+1105.Caption="Cargar Proyecto"
+1105.Tooltip="Cargar proyecto anterior"
+1106.Caption="Cargar un proyecto guardado anteriormente. Todos los cambios hechos para el proyecto actual y no guardados se perderan."
+1107.Caption="Guardar proyecto"
+1107.Tooltip="Guardar proyecto actual"
+1108.Caption="Guardar proyecto actual para usarlo despues."
+1109.Caption="Al iniciar Obsidium, debe crear o abrir un archivo proyecto."
+
+; options page
+1200.Caption="Opciones"
+1201.Caption="Basico\nAvanzado\nLicenciado\nTiempo a prueva\nMensajes"
+; basic settings
+1202.Caption="Ajustes Basicos"
+1203.Caption="Encriptar Recursos"
+1203.Tooltip="Encriptar Directorio Recursos (recomendado)"
+1204.Caption="Compresión"
+1204.Tooltip="Permite compresión ejecutable"
+1205.Caption="Quitar exportaciones"
+1205.Tooltip="Quitar exportaciones desde ejecutable"
+1206.Caption="Mantener superposición"
+1206.Tooltip="Conservar cualquier dato añadido al ejecutable"
+1207.Caption="Control acceso superposición"
+1207.Tooltip="Monitoreo control acceso a los datos superpuestos"
+1208.Caption="Encriptar superposición"
+1208.Tooltip="Encriptar datos superpuestos"
+1209.Caption="Comprobar depuración"
+1209.Tooltip="Comprobar para depurar (recomendado)"
+1210.Caption="Ningún mensaje de detección"
+1210.Tooltip="Suprimir mensaje de detección del depurador"
+1211.Caption="Contraseña Aplicación"
+1211.Tooltip="Estando verificada, la aplicación sólo continuará 
+introduciendo una contraseña"
+1212.Caption=""
+1212.Tooltip="Introducir la contraseña de la aplicación aqui"
+1213.Caption="Seleccione variables de entorno"
+1213.Tooltip="Almacena parámetros de protección en las variables del entorno"
+1214.Caption="Ocultar variables de entorno"
+1214.Tooltip="Ocultar variables de entorno desde herramientas monitoreo"
+1215.Caption="Bloquear licencias de sistema"
+1215.Tooltip="La clave de licencia sólo será válida para un sistema específico"
+1216.Caption="CPU"
+1216.Tooltip="Añadir CPU a ID sistema"
+1217.Caption="Disco duro"
+1217.Tooltip="Añadir disco duro a ID sistema "
+1218.Caption="Sistema operativo"
+1218.Tooltip="Añadir sistema operativo a ID sistema"
+1219.Caption="Dirección MAC"
+1219.Tooltip="Añádir la dirección MAC del Adaptador LAN primario a ID sistema"
+; advanced settings
+1220.Caption="Ajustes Avanzados"
+1221.Caption="No reubicar imagen"
+1221.Tooltip="Forzar base original imagen (Permite localizar errores)"
+1222.Caption="Eliminar bytes en OEP"
+1222.Tooltip="Quitar primeras instrucciones en punto entrada \ndel programa (desactive para la localización de errores)"
+1223.Caption="No mostrar ningun mensaje"
+1223.Tooltip="Suprimir cualquier cuadro de mensajes en caso de error"
+1224.Caption="Anular recursos no necesarios"
+1224.Tooltip="Quitar recursos no necesarios (opcion especifica Delphi)"
+1225.Caption="Ofuscación Delphi/BCB"
+1225.Tooltip="Ofuscación Delphi/BCB (Ver Documentación)"
+1226.Caption="Acceder protec. Dinamica API"
+1226.Tooltip=" Acceder protección Dinamica API via cargar libreria/dirección GetProc"
+1227.Caption="Parcheando tiempo ejecución"
+1227.Tooltip="Parchea codigo ejecutable durante ejecución\n (desconectar para buscar fallos)"
+1228.Caption="Trazador tiempo de ejecución"
+1228.Tooltip="Trazando codigo ejecutables durante tiempo ejecución\n(deshabilitar para buscar fallos/ganancia velocidad tiempo ejecución)"
+1229.Caption="Cheq. secciones encriptadas"
+1229.Tooltip="Chequear secciones encriptadas para modificaciones"
+; licensing settings
+1230.Caption="Ajustes licencia"
+1231.Caption="Destino clave licencia:"
+1232.Caption="Archivo licencia"
+1232.Tooltip="Guardar clave licencia en un archivo (espacificar nombre abajo)"
+1233.Caption="Registro (usuario actual)"
+1233.Tooltip="Las Claves de licencia se guardaran en el registro"
+1234.Caption="Registro (todos los usuarios)"
+1234.Tooltip="Las Claves de licencia se guardaran en el registro"
+1235.Caption="Nombre de archico claves:"
+1236.Tooltip="Introduzca el nombre deseado de archivo clave aqui"
+1237.Caption="Necesita una licencia valida para ejecutarse"
+1237.Tooltip="Estando habilitada, se necesita una clave válida de licencia para ejecutar el programa"
+; time trial settings
+1238.Caption="Expirar en"
+1238.Tooltip="Permite hacer que una aplicación caduque en una fecha fija"
+1239.Tooltip="Seleccionar fecha expiración aqui"
+1240.Caption="Limite Nº ejecuciones:"
+1240.Tooltip="Permite hacer expirar la aplicación un número definido de ejecuciones tras la instalación"
+1241.Tooltip="Introduzca numero de ejecuciones aqui"
+1242.Caption="Mostrar pantalla molesta"
+1242.Tooltip="Mostrar pantalla molesta al iniciar programa (Ver documentación)"
+1243.Caption="Seleccionar"
+1243.Tooltip="Seleccionar archivo dialogo"
+1244.Caption="Demora en segundos:"
+1245.Caption="Limite numero dias:"
+1245.Tooltip="Permite hacer expirar la aplicación un número\ndefinido de dias tras la instalación"
+1246.Caption="Permitir tras caducar la aplicación"
+1246.Tooltip="La aplicación se ejecutara aun si expiró, vea documentación para mas detalles"
+1247.Caption="Nuevo periodo prueba, version"
+1247.Tooltip="Permite conceder un nuevo período de prueba si\n se instala una versión posterior de la aplicación"
+1248.Tooltip="Introduzca numero versión actual aqui"
+1249.Caption="Quitar fecha prueba"
+1249.Tooltip="Quitar datos fecha de prueba de este ordenador"
+1259.Tooltip="Introduzca numero de dias aqui"
+1260.Caption="Ajustes tiempo prueba"
+; messages settings
+1250.Caption="Mensajes personalizados"
+1251.Caption="Detectado depurador:"
+1252.Caption="Prueba expirada:"
+;
+1253.Caption="Select message:"
+1254.Caption="Debugger detected\nTrial expired\nLicense required\nFile integrity error\nMemory allocation error\nDLL load error\nImport error\nImport ordinal error\nInternal error"
+1255.Caption="Caption:"
+1256.Tooltip="Enter the message caption here"
+1257.Caption="Message"
+1258.Tooltip="Enter the message text here"
+
+; key management page
+1300.Caption="Gestor claves"
+1301.Caption="Usar licencia interna sistema "
+1301.Tooltip="Seleccione esto para usar el sistema de licencias Obsidium"
+
+1302.Caption="Usar licencia externa sistema"
+1302.Tooltip="Seleccione esto si su aplicación ya usa una licencia sistema de confianza"
+1303.Caption="Licencia interna sistema"
+1304.Caption="Generar encriptación claves"
+1304.Tooltip="Generar encriptación claves simetrica y asimetrica"
+
+1305.Caption="512 bits\n768 bits\n1024 bits\n1536 bits\n2048 bits"
+
+1305.Tooltip="Seleccione tamaño clave deseado"
+1306.Caption="Antes de generar las claves de código, seleccione el tamaño deseado a la izquierda. La generación de clave puede llevar una cantidad considerable de tiempo."
+1307.Caption="Poner en la Lista negra de claves"
+1308.Caption="Lista negra de claves"
+1308.Tooltip="Ver/añadir/Quitar de la lista negra de claves"
+1309.Caption="Pulse en el botón 'lista negra de claves' para ver la lista negra actual de claves para añadir/quitar entradas."
+1310.Caption="Generación claves"
+1311.Caption="Generar claves"
+1311.Tooltip="Mostrar dialogo generación claves"
+1312.Caption="Presione el botón ' Generar clave ' para mostrar el diálogo de generación de claves que le permite crear claves textuales y binarias de licencia para este proyecto."
+1313.Caption="Generación clave en progreso.Esto tardara varios minutos dependiendo del tamaño de la clave y la veocidad de la CPU."
+
+1314.Tooltip="Ajuste prioridad de generacion"
+1315.Caption="Licencia externa sistema"
+1316.Caption="Esta llave se usará para encriptar secciones marcadas de código.Lea la documentación para los detalles."
+1317.Caption="Cargar clave"
+1317.Tooltip="Cargar clave encriptación desde archivo"
+1318.Caption="Clave externa presente"
+
+; protection page
+1400.Caption="Protección"
+1401.Caption="Ajustes\nEjecutables"
+1402.Caption="Directorio salida:"
+1403.Caption="Seleccionar"
+1403.Tooltip="Seleccionar directorio salida"
+1404.Tooltip="Aqui se muestra el estado de protección"
+1405.Caption="Abortar por error"
+1405.Tooltip="Abortar protección si ocurre un error (al proteger archivos múltiples)"
+1406.Caption="Protejer todo"
+1406.Tooltip="Protejer todos los archivos ejecutables"
+1407.Caption="Ruta relativa Archivo entrada\nsalida"
+1408.Caption="Añadir"
+1408.Tooltip="Añadir archivo a la lista"
+1409.Caption="Editar"
+1409.Tooltip="Editar nombre archivo"
+1410.Caption="Protejer"
+1410.Tooltip="Protejer archivo seleccionado"
+1411.Caption="Borrar"
+1411.Tooltip="Borrar archivo seleccionado de la lista"
+
+; about page
+1500.Caption="Acerca de Obsidium"
+1501.Caption="Esta copia de Obsidium esta licenciada para:"
+1502.Caption="Registro"
+1502.Tooltip="Introducir codigo registro"
+
+
+[frmBlacklist]
+; blacklisted keyfiles
+Caption="Archivo claves en lista negra"
+
+1000.Caption="Picar\nInformación licencia"
+1000.Tooltip="Lista de claves de la lista negra"
+1001.Caption="Añadir clave"
+1001.Tooltip="Añadir clave a la lista negra"
+1002.Caption="Añad.clave texto"
+1002.Tooltip="Añadir clave texto a la lista negra"
+1003.Caption="Eliminar clave"
+1003.Tooltip="Eliminar clave seleccionada de la lista"
+1004.Caption="Cerrar"
+1004.Tooltip="Cerrar este dialogo"
+
+
+[frmEnterKey]
+; dialog for entering text keys
+Caption="Clave licencia"
+
+1000.Caption="Aceptar"
+1000.Tooltip="Cerrar este dialogo"
+1001.Caption="Cancelar"
+1001.Tooltip="Abortar y cerrar este dialogo"
+
+
+[frmFileSelect]
+; file selection dialog
+Caption="Seleccionar archivos"
+
+1000.Caption="Seleccionar archivos"
+1001.Caption="Archivo entrada:"
+1002.Caption="Ruta relativa salida:"
+1003.Caption="Seleccionar"
+1004.Caption="Seleccionar"
+1005.Caption="Aceptar"
+1006.Caption="Cancelar"
+
+
+[frmKeygen]
+; license key generation dialog
+Caption="Generación clave"
+
+1000.Caption="Información licencia"
+1001.Tooltip="Información adicional almacenada en la clave (maximo 31 caracteres"
+1002.Tooltip="Información adicional almacenada en la clave (maximo 127 caracteres)"
+1003.Caption="Sistema ID"
+1004.Tooltip="Licencia bloqueada para este sistema ID"
+1005.Caption="Opciones"
+1006.Caption="Solo archivo"
+1006.Tooltip="Crear solo clave"
+1007.Caption="Solo texto"
+1007.Tooltip="Crear datos licencia solo texto"
+1008.Caption="Ambos"
+1008.Tooltip="Crear ambos clave y datos texto"
+1009.Caption="Las claves expiran en:"
+1010.Tooltip="Habilite y seleccione una fecha para crear una clave de tiempo limitado "
+1011.Caption="Generar"
+1011.Tooltip="Generar clave licencia"
+1012.Caption="Cerrar"
+1012.Tooltip="Cerrar este dialogo"
+
+
+[frmPreferences]
+; preferences dialog
+Caption="Preferencias"
+
+1000.Caption="Rutas"
+1001.Caption="Ruta por defecto del proyecto"
+1002.Caption="Seleccionar"
+1003.Caption="Opciones"
+1004.Caption="Autoguardar proyecto al salir"
+1005.Caption="Aceptar"
+1006.Caption="Cancelar"
+1007.Caption="Idioma Interfaz"
+
+
+[frmProjectName]
+Caption="Nombre Proyecto/Aplicación"
+
+1000.Caption="Por favor introduzca un nombre único (por ejemplo el nombre de su aplicación) para este proyecto. Este nombre es para uso interno sólo y no se puede cambiar después."
+1001.Caption="Aceptar"
+
+
+[frmRegister]
+Caption="Registro Obsidium"
+
+1000.Caption="Por favor copie su código de registro y péguelo aquí."
+
+1001.Caption="Aceptar"
+1001.Tooltip="Acceptar codigo registro"
+1002.Caption="Cancelar"
+1002.Tooltip="Abortar y cerrar este dialogo"
+
+
+[frmShowKey]
+; dialog showing generated license keys
+Caption="Clave licencia"
+
+1000.Caption="Guardar archivo"
+1000.Tooltip="Escribir datos de licencia en un archivo del texto"
+1001.Caption="Copiar al portapapeles"
+1001.Tooltip="Copiar datos licencia el portapapeles"
+1002.Caption="Cerrar"
+1002.Tooltip="Cerrar este dialogo"
+
+
+[Strings]
+; default message captions
+3000="Observación"
+3001="Error"
+
+2001="Error asignación memoria."
+2002="Error archivo I/O."
+
+; blacklist dialog strings
+2000="Error leyendo clave."
+2003="No se puede abrir clave."
+2004="La clave esta en la lista negra."
+2005="Clave no valida."
+2006="Añadir"
+2007=" Claves a la lista negra"
+; Desplegable menu lista negra
+2008="Elimina&r Clave"
+2009="&Añadir Clave"
+2010="Añadir Clave &texto"
+2011="Añadir desde archivo"
+2012="Remplazar desde archivo"
+
+; enter key dialog strings
+2100="La clave del texto parece ser no valida."
+
+; file selection dialog strings
+2200="Aviso: Las extensiones archivo diffieren."
+2201="Atención: Ruta relativa no valida:"
+
+; key generation dialog strings
+2300="Por favor introduzca sistema ID."
+2301="Sistema ID introducido No valido."
+2302="¿No se puede crear Clave!"
+2303="¿Error escribiendo clave!"
+2304="No se puede convertir clave en cadena texto!"
+2305="Usted no entró en ninguna información de licencia. ¿Continúa de cualquier manera?"
+
+; project name dialog strings
+2400="Por favor introduzca al menos 5 caracteres."
+
+; registration dialog strings
+2500="Por favor reinicie Obsidium para completar el proceso de inscripción."
+2501="Codigo registro No valido."
+
+; dialog showing generated license keys
+2600="¡Error escribiendo archivo!"
+2601="¡No se puede crear archivo!"
+
+; main window strings
+1000="Lo siento, cargar archivos de proyecto está deshabilitado en la versión demo."
+1001="Cargado desde archivo de proyecto"
+1002="Depurador detectado - por favor desactívelo y vuelva a arrancar la aplicación."
+1003="Su periodo de prueba ha terminado."
+1004="¿Crear nuevo proyecto?"
+1005="El archivo de proyecto esta en un formato antiguo, por favor abralo de nuevo."
+1006="No se puede convertir proyecto desde un formato antiguo."
+1007="No se puede abrir archivo proyecto."
+1008="La protección está en progreso, su proyecto no será guardado. ¿Salir de cualquier manera?"
+1009="La generación de clave está en progreso, su proyecto no será guardado. ¿Salir de cualquier manera?"
+1010="¿Guarda el proyecto actual antes de salir?"
+1011="¡Protección exitosa!"
+1012="No se puede abrir archivo entrada "
+1013="No se puede crear archivo salida"
+1014="Entrada archivo No valida"
+1015="Entrada archivo No soportada"
+1016="Error escribiendo archivo salida"
+1017="Error asignando memoria"
+1018="Error manipulando recursos"
+1019="Error manipulando exportaciones"
+1020="Error manipulando importaciones"
+1021="Error escribiendo/creando codigo protección"
+1022="Error manipulando TLS"
+1023="El archivo parece que ya esta protegido/enpaquetado"
+1024="Error desconocido"
+1025="Ajustar prioridad flujo a 'bajo'"
+1026="Ajustar prioridad flujo a 'normal'"
+1027="Ajustar prioridad flujo a 'alto'"
+1028="Ningún directorio de salida especificado "
+1029="Ningun nombre clave especificado, usar por defecto"
+1030="Opciones bloqueo sistema No valida"
+1031="Ruta relativa No valida"
+1032="Reuniendo ajustes proecto"
+1033="Archivo salida "
+1034="Protejer archivo "
+1035="Creandoa archivo salida..."
+1036="Abriendo archivo entrada..."
+1037="Chequeando archivo entrada..."
+1038="Manipulando exportaciones..."
+1039="Manipulando importaciones..."
+1040="Manipulando recursos..."
+1041="Manipulando TLS..."
+1042="Creando/escribiendo codigo protección..."
+1043="Encontrad marca de encriptación en RVA 0x"
+1044="ERROR: Llamada a marca No soportda."
+1045="ERROR: Abrir marca encriptación tiempo ejecución."
+1046="Encontrada marca encriptacion en RVA 0x"
+1047="Fallo cargando DLL "
+1048="Por favos asegurese que todas las DLLs pueden ser cargadas por Obsidium."
+1049="ERROR: Marca encriptada anidada en RVA 0x"
+1050="Comprimiendo sección (0x"
+1051=" bytes)"
+1052="Tamaño comprimido 0x"
+1053="Consejo:Usar encrip.tiempo ejecución para aumentar Seguridad."
+1054="ATENCION: El archivo de entrada parece estar empacado."
+1055="Por favor introduzca un número válido de versión.\nejemplo numeros validos: 1, 1.0, 2.5"
+1056="Por favor introduzca un número válido de dias."
+1057="Por favor introduzca un número válido de ejecuciones."
+1058="No se puede leer archivo."
+1059="El archivo no contiene datos de diálogo."
+
+; protected files popup menu
+1060="&Añadir"
+1061="&Editar"
+1062="&Protejer"
+1063="&Borrar"
+
+1064="Duplique entrada para este archivo."
+1065="Por favor seleccione el directorio de salida del proyecto que se usará para almacenar archivos encriptados/ protegidos."
+1066="Encriptación Exitosa"
+1067="Error al encriptar archivo"
+1068="¿Quiere realmente borrar esta entrada?"
+1069="La información de tiempo de prueba ha sido quitada."
+
+; open project file popup menu
+1070="Abrir archivo proyecto..."
+
+
+

@@ -1,0 +1,131 @@
+// Developed by GIV
+// giv@reversing.ro
+// Mar 26 2015
+// Version 0.1
+
+start:
+bc
+lc
+lclr
+bphwc
+bpmc
+
+gpa "ZwFreeVirtualMemory", "ntdll.dll"
+mov api, $RESULT
+gmi eip, CODEBASE
+mov bazacod, $RESULT
+gmi eip, CODESIZE
+mov marimecod, $RESULT
+
+bp api
+
+erun
+
+mov ax1, eax
+mov cx1, ecx
+mov dx1, edx
+mov bx1, ebx
+mov sp1, esp
+mov bp1, ebp
+mov si1, esi
+mov di1, edi
+
+bpgoto api, prelucrare
+
+urmatorul:
+mov ax1, eax
+mov cx1, ecx
+mov dx1, edx
+mov bx1, ebx
+mov sp1, esp
+mov bp1, ebp
+mov si1, esi
+mov di1, edi
+erun
+
+prelucrare:
+cmp ax1, eax, 6
+ifneq
+jmp urmatorul
+endif
+mov ax1, eax
+cmp cx1, ecx, 6
+ifneq
+jmp urmatorul
+endif
+mov cx1, ecx
+cmp dx1, edx
+ifneq
+jmp urmatorul
+endif
+mov dx1, edx
+cmp bx1, ebx
+ifneq
+jmp urmatorul
+endif
+mov bx1, ebx
+cmp sp1, esp
+ifneq
+jmp urmatorul
+endif
+mov sp1, esp
+cmp bp1, ebp
+ifneq
+jmp urmatorul
+endif
+mov bp1, ebp
+cmp si1, esi
+ifneq
+jmp urmatorul
+endif
+mov si1, esi
+cmp di1, edi
+ifneq
+jmp urmatorul
+endif
+mov di1, edi
+bc api
+
+continuare:
+bprm bazacod, marimecod
+erun
+jmp rulare
+
+rulare:
+
+cmp [eip], #F3A4#, 2
+ifeq
+jmp start
+endif
+
+sfarsit:
+
+bc
+bphws
+bpmc
+
+cmt eip, "<-OEP found by GIV"
+
+lclr
+
+log "Themida Winlicense OEP find by GIV"
+log "giv@reversing.ro"
+log "2015"
+log "Made in Romania"
+cmp [eip], #FF25#, 2
+ifeq
+gpa "VirtualAlloc", "kernel32.dll"
+mov alloc, $RESULT
+bp alloc
+erun
+bc
+msg "This is a .NET file. Dump with Codecracker MegaDumper and fix Universal fixer"
+endif
+
+bc
+bphws
+bpmc
+
+pause
+pause
+ret

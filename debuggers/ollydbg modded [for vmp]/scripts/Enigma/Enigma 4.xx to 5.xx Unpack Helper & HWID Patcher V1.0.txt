@@ -1,0 +1,104 @@
+//created by ramjane
+//tested on many unpackme
+//hope it will work fine
+bphwc
+var hwid
+var hwidsize
+var hwidjmp
+var bpad
+var sec
+var ENIGMA
+var GetProcAddress
+var RET
+var tmp
+var APIP
+var EP
+var allo
+var pass
+var prepatch
+//////////////////////////////
+//put hwid without "-"
+/////////////////////////////
+mov hwid, "63B2F42270363648F4A06F991621A7E75A61DF30"
+/////////////////////////////
+len hwid
+mov hwidsize, $RESULT
+mov EP,eip
+gpa "GetProcAddress" , "Kernel32.dll"
+mov GetProcAddress, $RESULT
+alloc 1000
+mov sec,$RESULT
+mov [sec],#606A006A00E8837AAA906190#
+eval "call {GetProcAddress}"
+asm sec+05, $RESULT
+mov eip,sec
+bp eip+0B
+bp GetProcAddress
+run
+bc eip
+rtr
+mov RET, eip
+run
+bc
+mov eip,EP
+bphws RET
+esto
+free sec
+mov ENIGMA, esi
+bphwc
+var OEPBP
+var VABP
+var APICALL
+gpa "VirtualAlloc", "kernel32.dll"
+mov VABP, $RESULT
+bp VABP
+run
+bc
+rtr
+sti
+start:
+alloc 1000
+mov allo, $RESULT
+mov [allo],#5E5B59595DC3#
+find ENIGMA, #FF0081C2E0#
+mov OEPBP,$RESULT
+bphws OEPBP, "x"
+find ENIGMA,#3D00F00000#
+mov APICALL,$RESULT
+eval "inc eax"
+asm APICALL-15, $RESULT
+eval "nop"
+asm APICALL-14,$RESULT
+mov EP,eip
+find ENIGMA, #558BEC33C9515151515151538BD833C0#
+mov bpad, $RESULT+180
+find ENIGMA,#85d274188b5afc#
+mov hwidjmp, $RESULT+23
+alloc 1000
+mov sec, $RESULT
+mov [sec],#608BF850E84A73C27583F80C0F850D000000C7C128000000BE25001900F3A461E9A3739800#
+mov [sec+25], hwid
+gpa "lstrlenA", "kernel32.dll"
+mov tmp, $RESULT
+eval "call {tmp}"
+asm sec+4, $RESULT
+eval "cmp eax, {hwidsize}"
+asm sec+9, $RESULT
+eval "mov ecx, {hwidsize}"
+asm sec+12, $RESULT
+mov [sec+19], sec+25
+gci hwidjmp, DESTINATION
+mov tmp,$RESULT
+eval "jmp {tmp}"
+asm sec+20, $RESULT
+eval "jmp {sec}"
+asm hwidjmp, $RESULT
+mov eip,EP
+esto 
+bphws ecx
+run
+sti
+cmt eip, "OEP"
+bphwc
+msg "OEP found just fix VM API and Everything Should work \r\n\r\nCreated by Ramjane.\r\n\r\nThanks LCF-AT for his Great work."
+ret

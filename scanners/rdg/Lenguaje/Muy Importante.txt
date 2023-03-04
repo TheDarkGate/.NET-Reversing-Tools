@@ -1,0 +1,22 @@
+////////////////////////////////////////
+    Muy Importante / Very Important
+///////////////////////////////////////
+
+
+Recomendacion:
+Para Agilizar el Escaneo en Modo "B" 
+RDG Packer Detector Accede Cientos de veces al archivo.
+Si tienes configurado  tu Antivirus Para que reaccione al acceder al Archivo el escaneo será muy Lento.
+
+
+Recommendation: 
+To expedite the Scan Mode "B" 
+RDG Packer Detector Log Hundreds of times a file. 
+If you have configured your Antivirus To respond to access the file scanning is very slow
+
+
+
+*/
+
+Idioma:
+Si Deseas hacer alguna traducción de algún idioma me lo envias y lo agregamos a la web.

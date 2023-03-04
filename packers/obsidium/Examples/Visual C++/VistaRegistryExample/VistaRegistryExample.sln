@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "store_license", "store_license\store_license.vcproj", "{B16D5A9C-8F7C-42AE-9686-79C4949A12CA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "enter_license", "enter_license\enter_license.vcproj", "{CD15939B-F8B9-46FB-BDC0-BCBCE0E16FFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B16D5A9C-8F7C-42AE-9686-79C4949A12CA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B16D5A9C-8F7C-42AE-9686-79C4949A12CA}.Debug|Win32.Build.0 = Debug|Win32
+		{B16D5A9C-8F7C-42AE-9686-79C4949A12CA}.Release|Win32.ActiveCfg = Release|Win32
+		{B16D5A9C-8F7C-42AE-9686-79C4949A12CA}.Release|Win32.Build.0 = Release|Win32
+		{CD15939B-F8B9-46FB-BDC0-BCBCE0E16FFE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CD15939B-F8B9-46FB-BDC0-BCBCE0E16FFE}.Debug|Win32.Build.0 = Debug|Win32
+		{CD15939B-F8B9-46FB-BDC0-BCBCE0E16FFE}.Release|Win32.ActiveCfg = Release|Win32
+		{CD15939B-F8B9-46FB-BDC0-BCBCE0E16FFE}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

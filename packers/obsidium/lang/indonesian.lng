@@ -1,0 +1,432 @@
+[Info]
+LanguageName="Indonesian"
+Charset="utf-8"
+Version="1.2"
+
+[frmMain]
+; main window
+Caption="Sistem Proteksi Software Obsidium"
+
+; page selection buttons
+1000.Tooltip="Ambil/Simpan file proyek"
+1001.Tooltip="Edit seting proyek"
+1002.Tooltip="Manajemen Kunci"
+1003.Tooltip="Lindungi aplikasi"
+1004.Tooltip="Tentang program ini"
+
+; toolbuttons
+1005.Tooltip="Buat file proyek baru"
+1006.Tooltip="Ambil file proyek"
+1007.Tooltip="Simpan file proyek"
+1008.Tooltip="Preferensi"
+
+; project management page
+1100.Caption="Manajemen Proyek"
+1101.Caption="Tindakan"
+1102.Caption="Informasi"
+1103.Caption="Proyek Baru"
+1103.Tooltip="Buat proyek baru"
+1104.Caption="Membuat file proyek baru. Semua perubahan yang tidak disimpan pada proyek saat ini akan hilang."
+1105.Caption="Ambil proyek"
+1105.Tooltip="Ambil proyek yang sudah ada"
+1106.Caption="Ambil file proyek yang sudah disimpan sebelumnya. Semua perubahan yang tidak disimpan pada proyek saat ini akan hilang."
+1107.Caption="Simpan Proyek"
+1107.Tooltip="Simpan ke proyek saat ini"
+1108.Caption="Menyimpan proyek sekarang untuk penggunaan nanti."
+1109.Caption="Saat memulai Obsidium, anda harus membuat file proyek baru atau mengambil yang sudah ada."
+
+; options page
+1200.Caption="Opsi"
+1201.Caption="Dasar\nLanjutan\nLisensi\nPercobaan Waktu\nPesan"
+; basic settings
+1202.Caption="Seting Dasar"
+1203.Caption="Enkripsi resources"
+1203.Tooltip="Enkripsi direktori resource (direkomendasikan)"
+1204.Caption="Kompresi"
+1204.Tooltip="Hidupkan kompresi eksekutabel"
+1205.Caption="Hapus exports"
+1205.Tooltip="Hapus exports dari eksekutabel"
+1206.Caption="Biarkan overlays"
+1206.Tooltip="Biarkan data yang ditambahkan ke eksekutabel"
+1207.Caption="Akses kontrol overlay"
+1207.Tooltip="Akses monitor dan kontrol terhadap data overlay"
+1208.Caption="Enkrip overlays"
+1208.Tooltip="Enkrip data overlay"
+1209.Caption="Periksa Debugger"
+1209.Tooltip="Memeriksa debuggers (direkomendasikan)"
+1210.Caption="Tidak ada pesan deteksi"
+1210.Tooltip="Suppress debugger detection message"
+1211.Caption="Kata sandi aplikasi"
+1211.Tooltip="Jika dicentang, aplikasi hanya akan berjalan setelah memasukan kata sandi"
+1212.Tooltip="Masukkan kata sandi aplikasi disini"
+1213.Caption="Set variabel lingkungan"
+1213.Tooltip="Simpan parameter proteksi dalam variabel lingkungan"
+1214.Caption="Sembunyikan variabel lingkungan"
+1214.Tooltip="Sembunyikan variabel lingkungan dari piranti monitoring"
+1215.Caption="Kunci lisensi ke sistem"
+1215.Tooltip="Kunci lisensi hanya akan benar untuk sistem tertentu"
+1216.Caption="CPU"
+1216.Tooltip="Tambah CPU ke ID sistem"
+1217.Caption="Harddisk"
+1217.Tooltip="Tambah harddisk ke ID sistem"
+1218.Caption="Sistem Operasi"
+1218.Tooltip="Tambah Sistem Operasi ke ID sistem"
+1219.Caption="alamat MAC"
+1219.Tooltip="Tambah alamat adapter MAC pada LAN primer ke ID sistem"
+; advanced settings
+1220.Caption="Seting Lanjutan"
+1221.Caption="Jangan relokasi image"
+1221.Tooltip="Paksa basis image asli (hidupkan untuk keperluan pemecahan masalah)"
+1222.Caption="Hapus byte pada OEP"
+1222.Tooltip="Hapus instruksi pertama pada poin entri program (matikan untuk pemecahan masalah)"
+1223.Caption="Jangan tampil pesan apapun"
+1223.Tooltip="Sembunyikan kotak pesan dalam hal ada kesalahan"
+1224.Caption="Hindari resource tidak berguna"
+1224.Tooltip="Hapus resource tidak berguna (opsi tertentu-Delphi)"
+1225.Caption="Delphi/BCB obfuscation"
+1225.Tooltip="Delphi/BCB obfuscation (lihat dokumentasi)"
+1226.Caption="Akses API proteksi dinamis"
+1226.Tooltip="Hidupkan akses dinamis terhadap API proteksi via LoadLibrary/GetProcAddress"
+1227.Caption="Penggantian Runtime"
+1227.Tooltip="Penggantian kode eksekutabel selama runtime (matikan untuk keperluan pemecahan masalah)"
+1228.Caption="Penelusuran Runtime"
+1228.Tooltip="Penelusuran kode eksekutabel selama runtime (matikan untuk keperluan pemecahan masalah / diperoleh kecepatan runtime)"
+1229.Caption="Periksa seksi yang dienkripsi"
+1229.Tooltip="Periksa seksi yang dienkripsi untuk modifikasi"
+; licensing settings
+1230.Caption="Seting Lisensi"
+1231.Caption="Lokasi kunci lisensi:"
+1232.Caption="keyfile"
+1232.Tooltip="Kunci lisensi akan disimpan dalam sebuah file (tetapkan nama dibawah ini)"
+1233.Caption="registri (pemakai saat ini)"
+1233.Tooltip="Kunci lisensi akan disimpan dalam registri"
+1234.Caption="registri (semua pemakai)"
+1234.Tooltip="Kunci lisensi akan disimpan dalam registri"
+1235.Caption="Nama keyfile:"
+1236.Tooltip="Masukkan nama keyfile yang diinginkan disini"
+1237.Caption="Memerlukan lisensi benar untuk dijalankan"
+1237.Tooltip="Jika dihidupkan, kunci lisensi yang benar diperlukan untuk menjalankan program"
+; time trial settings
+1238.Caption="Habis pada"
+1238.Tooltip="Hidupkan untuk membuat aplikasi habis pada tanggal tertentu"
+1239.Tooltip="Pilih tanggal ekspirasi disini"
+1240.Caption="Jumlah dijalankan terbatas:"
+1240.Tooltip="Hidupkan untuk membuat aplikasi habis sesuai dengan jumlah berapa kali dijalankan setelah instalasi"
+1241.Tooltip="Masukkan jumlah yang dijalankan disini"
+1242.Caption="Tampilkan layar gangguan kustom"
+1242.Tooltip="Menampilkan layar gangguan kustom saat program dimulai (lihat dokumentasi)"
+1243.Caption="Pilih"
+1243.Tooltip="Pilih file dialog"
+1244.Caption="Delay dalam detik:"
+1245.Caption="Batas jumlah hari:"
+1245.Tooltip="Hidupkan untuk membuat aplikasi habis sejumlah hari yang ditentukan setelah instalasi"
+1246.Caption="Ijinkan aplikasi habis"
+1246.Tooltip="Aplikasi akan berjalan meskipun habis masa tenggang, lihat dokumentasi untuk detailnya"
+1247.Caption="Ijinkan periode percobaan baru, versi"
+1247.Tooltip="Hidupkan untuk memberikan periode percobaan baru jika versi baru dari aplikasi diinstalasi"
+1248.Tooltip="Masukkan nomor versi sekarang disini"
+1249.Caption="Hapus data percobaan"
+1249.Tooltip="Hapus data waktu percobaan dari komputer ini"
+1259.Tooltip="Masukkan jumlah hari disini"
+1260.Caption="Seting Waktu percobaan"
+; messages settings
+1250.Caption="Pesan kustom"
+1251.Caption="Debugger terdeteksi:"
+1252.Caption="Percobaan habis:"
+;
+1253.Caption="Pilih pesan:"
+1254.Caption="Debugger terdeteksi\nPercobaan habis\nDiperlukan lisensi\nIntegritas file salah\nAlokasi memori salah\nPemanggilan DLL salah\nImpor salah\nImpor ordinal salah\nKesalahan Internal"
+1255.Caption="Judul:"
+1256.Tooltip="Masukkan judul pesan disini"
+1257.Caption="Pesan"
+1258.Tooltip="Masukkan teks pesan disini"
+
+
+; key management page
+1300.Caption="Manajemen Kunci"
+1301.Caption="Gunakan sistem lisensi internal"
+1301.Tooltip="Pilih ini untuk menggunakan sistem lisensi Obsidium"
+1302.Caption="Gunakan sistem lisensi eksternal"
+1302.Tooltip="Pilih ini jika aplikasi anda sudah menggunakan sistem lisensi tertentu"
+1303.Caption="Sistem lisensi internal"
+1304.Caption="Buat kunci enkripsi"
+1304.Tooltip="Buat kunci enkripsi simetrik dan asimetrik"
+1305.Caption="512 bits\n768 bits\n1024 bits\n1536 bits\n2048 bits"
+1305.Tooltip="Pilih keysize anda yang diinginkan"
+1306.Caption="Sebelum pembuatan kunci enkripsi, pilih keysize yang diinginkan disebelah kiri. Pembuatan kunci mungkin memerlukan waktu cukup lama ."
+1307.Caption="Daftar hitam Keyfile"
+1308.Caption="Daftar hitam Keyfile"
+1308.Tooltip="Lihat/tambah/hapus keyfiles yang terdaftar hitam"
+1309.Caption="Tekan tombol 'Daftar hitam Keyfile' untuk melihat daftar yang sekarang didaftar hitamkan dan entri tambah/hapus."
+1310.Caption="Pembuatan Keyfile"
+1311.Caption="Buat keyfile"
+1311.Tooltip="Tampilkan dialog pembuatan keyfile"
+1312.Caption="Tekan tombol 'Buat keyfile' untuk menampilkan dialog pembuatan yang mengijinkan anda untuk membuat kunci lisensi secara tekstual dan biner untuk proyek ini."
+1313.Caption="Pembuatan kunci dalam progres. Ini membutuhkan beberapa menit tergantung pada keysize yang dipilih serta kecepatan CPU anda."
+1314.Tooltip="Sesuaikan prioritas thread pembuatan"
+1315.Caption="Sistem lisensi eksternal"
+1316.Caption="Kunci ini akan digunakan untuk enkripsi seksi kode tertandai. Lihat dokumentasi untuk lebih jelasnya."
+1317.Caption="Ambil kunci"
+1317.Tooltip="Ambil kunci enkripsi dari file"
+1318.Caption="Kunci eksternal tersedia"
+
+; protection page
+1400.Caption="Proteksi"
+1401.Caption="Settng\nEksekutabel"
+1402.Caption="Direktori output:"
+1403.Caption="Pilih"
+1403.Tooltip="Pilih direktori output"
+1404.Tooltip="Status proteksi ditampilkan disini"
+1405.Caption="Batalkan bila salah"
+1405.Tooltip="Batalkan proteksi jika terjadi kesalahakan (ketika memproteksi file multipel)"
+1406.Caption="Proteksi semua"
+1406.Tooltip="Protesi semua file eksekutabel"
+1407.Caption="File input\nPath output relatif"
+1408.Caption="Tambah"
+1408.Tooltip="Tambahkan file ke daftar"
+1409.Caption="Edit"
+1409.Tooltip="Edit nama file"
+1410.Caption="Proteksi"
+1410.Tooltip="Proteksi file yang dipilih"
+1411.Caption="Hapus"
+1411.Tooltip="Hapus file yang dipilih dari daftar"
+
+; about page
+1500.Caption="Tentang Obsidium"
+1501.Caption="Copy Obsidium ini dilisensikan kepada:"
+1502.Caption="Registrasi"
+1502.Tooltip="Masukkan kode registrasi"
+
+
+[frmBlacklist]
+; blacklisted keyfiles
+Caption="Daftar Hitam Keyfiles"
+
+1000.Caption="Hash\nInfo Lisensi"
+1000.Tooltip="Daftar keyfiles yang sekarang didaftar hitamkan"
+1001.Caption="Tambah keyfile"
+1001.Tooltip="Tambah keyfile ke daftar hitam"
+1002.Caption="Tambah kunci teks"
+1002.Tooltip="Tambah kunci teks ke daftar hitam"
+1003.Caption="Hapus keyfile"
+1003.Tooltip="Hapus keyfile yang dipilih dari daftar"
+1004.Caption="Tutup"
+1004.Tooltip="Tutup dialog ini"
+
+
+[frmEnterKey]
+; dialog for entering text keys
+Caption="Kunci Lisensi"
+
+1000.Caption="OK"
+1000.Tooltip="Tutup dialog ini"
+1001.Caption="Batal"
+1001.Tooltip="Batalkan dan tutup dialog ini"
+
+
+[frmFileSelect]
+; file selection dialog
+Caption="Pilih File"
+
+1000.Caption="Pilih File"
+1001.Caption="File Inpur:"
+1002.Caption="Path relatif output:"
+1003.Caption="Pilih"
+1004.Caption="Pilih"
+1005.Caption="OK"
+1005.Caption="Batal"
+
+
+[frmKeygen]
+; license key generation dialog
+Caption="Pembuatan Keyfile"
+
+1000.Caption="Informasi Lisensi"
+1001.Tooltip="Informasi tambahan disimpan dalam keyfile (maks. 31 karakter)"
+1002.Tooltip="Informasi tambahan disimpan dalam keyfile (maks. 127 karakter)"
+1003.Caption="ID Sistem"
+1004.Tooltip="Lisensi akan dikunci ke ID sistem ini"
+1005.Caption="Opsi"
+1006.Caption="Hanya File"
+1006.Tooltip="Buat hanya keyfile"
+1007.Caption="Hanya Teks"
+1007.Tooltip="Buat data lisensi hanya sebagai teks"
+1008.Caption="Keduanya"
+1008.Tooltip="Buat kedua keyfile dan data teks"
+1009.Caption="Keyfile habis pada:"
+1010.Tooltip="Hidupkan dan pilih tanggal untuk membuat keyfile dengan waktu terbatas"
+1011.Caption="Buat"
+1011.Tooltip="Buat kunci lisensi"
+1012.Caption="Tutup"
+1012.Tooltip="Tutup dialog ini"
+
+
+[frmPreferences]
+; preferences dialog
+Caption="Preferensi"
+
+1000.Caption="Path"
+1001.Caption="Path file proyek default"
+1002.Caption="Pilih"
+1003.Caption="Opsi"
+1004.Caption="Otomatis menyimpan file saat keluar"
+1005.Caption="OK"
+1006.Caption="Batal"
+1007.Caption="Bahasa Pengantar"
+
+
+[frmProjectName]
+Caption="Proyek/Nama aplikasi"
+
+1000.Caption="Silahkan masukkan nama unik (misalnya nama aplikasi anda) untuk proyek ini. Nama ini adalah untuk keperluan internal saja dan tidak bisa diubah setelahnya."
+1001.Caption="OK"
+
+
+[frmRegister]
+Caption="Registrasi Obsidium"
+
+1000.Caption="Silahkan copy kode registrasi anda dan paste disini."
+1001.Caption="OK"
+1001.Tooltip="Terima kode registrasi"
+1002.Caption="Batal"
+1002.Tooltip="Batalkan dan tutup dialog ini"
+
+
+[frmShowKey]
+; dialog showing generated license keys
+Caption="Kunci Lisensi"
+
+1000.Caption="Simpan ke file"
+1000.Tooltip="Tulis data lisensi ke file teks"
+1001.Caption="Copy ke clipboard"
+1001.Tooltip="Copy data lisensi ke clipboard"
+1002.Caption="Tutup"
+1002.Tooltip="Tutup dialog ini"
+
+
+[Strings]
+; default message captions
+3000="Catatan"
+3001="Salah"
+
+2001="Alokasi memori salah."
+2002="File I/O salah."
+
+; blacklist dialog strings
+2000="Pembacaan keyfile salah."
+2003="Tidak bisa membuka keyfile."
+2004="Keyfile sudah didaftar hitamkan."
+2005="Keyfile tidak benar."
+2006="Ditambahkan "
+2007=" kunci ke daftar hitam"
+; blacklist popup menu
+2008="&Hapus keyfile"
+2009="&Tambah keyfile"
+2010="Tambah &kunci teks"
+2011="Tambah dari file"
+2012="Timpa dari file"
+
+; enter key dialog strings
+2100="Teks nampaknya tidak benar."
+
+; file selection dialog strings
+2200="Catatan: Ekstensi file berbeda."
+2201="Perhatian: path relatif tidak benar:"
+
+; key generation dialog strings
+2300="Silahkan masukkan ID sistem."
+2301="ID sistem yang anda masukkan tidak benar."
+2302="Tidak bisa membuat keyfile!"
+2303="Penulisan keyfile salah!"
+2304="Tidak bisa mengubah keyfile ke string teks!"
+2305="Anda tidak memasukan informasi lisensi apapun. Tetap melanjutkan?"
+
+; project name dialog strings
+2400="Silahkan masukkan setidaknya 5 karakter."
+
+; registration dialog strings
+2500="Silahkan ulangi Obsidium untuk menyempurnakan proses registrasi."
+2501="Kode registrasi tidak benar."
+
+; dialog showing generated license keys
+2600="Penulisan ke file salah!"
+2601="Tidak bisa membuat file!"
+
+; main window strings
+1000="Maaf, pengambilan file proyek dimatikan dalam versi demo."
+1001="Diambil dari file proyek"
+1002="Debugger terdeteksi - silahkan matikan ituu dan mulai lagi aplikasi."
+1003="Periode percobaan anda sudah berakhir."
+1004="Buat proyek baru?"
+1005="File proyek sudah diubah dari format lama, silahkan buka kembali."
+1006="Tidak bisa mengubah file proyek dari format lama."
+1007="Tidak bisa membuka file proyek."
+1008="Proteksi dalam progres, proyek anda tidak akan disimpan. Tetap keluar?"
+1009="Pembuatan kunci dalam progres, proyek anda tidak akan disimpan. Tetap keluar?"
+1010="Simpan proyek saat ini sebelum keluar?"
+1011="Proteksi sukses!"
+1012="Tidak bisa membuka file input"
+1013="Tidak bisa membuat file output"
+1014="File input tidak benar"
+1015="File input tidak didukung"
+1016="Penulisan ke file output salah"
+1017="Alokasi memori salah"
+1018="Penanganan resource salah"
+1019="Penanganan ekspor salah"
+1020="Penanganan impor salah"
+1021="Penulisan/Pembuatan kode proteksi salah"
+1022="Penanganan TLS salah"
+1023="File nampaknya sudah diproteksi/dikompres"
+1024="Kesalahan tidak dikenal"
+1025="Prioritas Thread diset ke 'lebih rendah'"
+1026="Prioritas Thread diset ke 'normal'"
+1027="Prioritas Thread diset ke 'lebih tinggi'"
+1028="Tidak ada direktori output yang ditetapkan"
+1029="Tidak ada nama keyfile yang ditetapkan, menggunakan default"
+1030="Opsi kunci sistem tidak benar"
+1031="Path relatif tidak benar"
+1032="Mengambil seting proyek"
+1033="File output "
+1034="Memproteksi file "
+1035="Pembuatan file output..."
+1036="Pembukaan file input..."
+1037="Pemeriksaan file input..."
+1038="Penanganan ekspor..."
+1039="Penanganan impor..."
+1040="Penanganan resources..."
+1041="Penanganan TLS..."
+1042="Pembuatan/penulisan kode proteksi..."
+1043="Ditemukan tanda enkripsi pada RVA 0x"
+1044="SALAH: tanda panggilan tidak didukung."
+1045="SALAH: Membuka tanda enkripsi runtime."
+1046="Ditemukan tanda enkripsi runtime pada RVA 0x"
+1047="Gagal memanggil DLL "
+1048="Pastikan semua DLL yang diperlukan dipanggil oleh Obsidium."
+1049="SALAH: tanda enkripsi berulang pada RVA 0x"
+1050="Pengkompresan seksi (0x"
+1051=" bytes)"
+1052="Besar Kompresi 0x"
+1053="Tip: Guanakan enkripsi runtime untuk meningkatkan keamanan."
+1054="PERHATIAN: File input nampaknya dikompresi."
+1055="Silahkan masukkan nomor versi yang benar.\nContoh nomor benar: 1, 1.0, 2.5"
+1056="SIlahkan masukkan jumlah hari yang benar."
+1057="Silahkan masukkan jumlah dijalankan yang benar."
+1058="Tidak bisa membaca file."
+1059="File tidak berisi data dialog."
+1071="Teks pesan yang anda masukkan tidak benar. Silahkan merujuk ke dokumentasi untuk lebih jelasnya."
+
+; protected files popup menu
+1060="&Tambah"
+1061="&Edit"
+1062="&Proteksi"
+1063="&Hapus"
+
+1064="Duplikasi entri untuk file ini."
+1065="Silahkan pilih direktori output proyek yang akan digunakan untuk menyimpan file terproteksi/dienkripsi."
+1066="Enkripsi sukses"
+1067="Salah saat mengenkripsi file"
+1068="Anda benar-benar ingin menghapus entri ini?"
+1069="Informasi waktu percobaan sudah dihapus."
+
+; open project file popup menu
+1070="Buka file proyek..."

@@ -1,0 +1,121 @@
+////////////////////////Château-Saint-Martin//////////////////////////////////////////////////
+//                                                                          /////////////////
+//  FileName    :  TheMida - WinLicense CRC Quickie 1.0                     ////////////////
+//  Features    :                                                           ///////////////
+//                 This script will bring and show you the actually used    //////////////
+//                 CRC Address & DWORD in your original working file and    /////////////
+//                 dumped files.You only have to set manually soft BPs at   ////////////
+//                 all compare commands to find the new CRC value.If you    ///////////
+//                 got then paste new CRC DWORD into new VA Address in your //////////
+//                 file and save it.For more infos watch my example video   /////////
+//                 I made for this script I wrote in few minutes only.      ////////
+//                                                                          ///////
+//  Environment :  WinXP-SP2/SP3 or Windows7 32 Bit,OllyDbg V1.10,          //////
+//                 ODBGScript v1.82.6,StrongOD 0.4.8.892,PhantOm 1.79       /////
+//                                                                          ////
+//  Author      :  LCF-AT                                                   ///
+//  Date        :  2016-11-05 | May                                         //
+//                                                                         //
+///////////////WILLST DU SPAREN,DANN MUßT DU SPAREN!////////////////////////
+/*
+INFO:  The script is pretty simple so don't expect that it will do the entire
+       work for you.No fear,you only need to check some compare commands and
+       filling the new CRC Address with the new DWORD and saving the file so
+       that all.No big thing right.For all who don't know what to do I made
+       also a example video of course to show it in action.
+INFO2: The best is when you do use this script first with your original
+       working target and notice the actually CRC VA & DWORD.Now set BPs on
+       all found compare commands (R32 & [R32] for newer files).Now on the
+       the right stop you can see the used original CRC value on right compare
+       command + Mapped VA address.Notice only the right stop VA + counts when
+       you stopped on it and now do same with your modded file.
+*/
+pause
+call VARS
+lc
+lclr
+bphwc
+pusha
+loadlib "imagehlp.dll"
+popa
+GPA "CheckSumMappedFile","imagehlp.dll"
+mov CheckSumMappedFile,   $RESULT
+bphwc
+bphws CheckSumMappedFile, "x"
+////////////////////
+AGAIN:
+esto
+cmp eip, CheckSumMappedFile
+jne AGAIN
+bphwc
+////////////////////
+LOOP:
+rtr
+cmp eip, CheckSumMappedFile
+je LOOP
+gmemi edi, MEMORYBASE
+mov MAPPED_SEC, $RESULT
+gmemi edi, MEMORYSIZE
+mov MAPPED_SEC_SIZE, $RESULT
+bprm MAPPED_SEC, MAPPED_SEC_SIZE
+esto
+mov MAPP_PE, MAPPED_SEC+3C
+cmp eax, MAPP_PE
+je IS_PE
+cmp ecx, MAPP_PE
+je IS_PE
+cmp edx, MAPP_PE
+je IS_PE
+cmp ebx, MAPP_PE
+je IS_PE
+cmp ebp, MAPP_PE
+je IS_PE
+cmp esi, MAPP_PE
+je IS_PE
+cmp edi, MAPP_PE
+je IS_PE
+////////////////////
+DIRECT_CRC:
+bpmc
+cmt eip, "CRC Address & Dword"
+msg "Now at eip you can see the actually right mapped CRC VA address & the used DWORD inside! \r\n\r\nJust subtract the mapped VA with mapped base and you got the offset address you can also enter in Olly! \r\n\r\nNow get new CRC value and paste it into offset and save the file! \r\n\r\nLCF-AT"
+msg "Now find all compare commands! \r\n\r\ncmp R32,R32 & pushfd \r\n\r\ncmp [R32],R32 for newer files! \r\n\r\nNow check all set BPs whether there are right or not! \r\n\r\nIf there are some wrong then remove them to prevent problems! \r\n\r\nLCF-AT"
+log "---------- CRC Basic Compare Commands ----------",""
+log "","
+log "cmp r32,r32","
+log "pushfd","
+log "cmp [r32],r32","
+log "pushfd","
+msg "Thank you for using my script! \r\n\r\nPS: Open log window to copy compare commands! \r\n\r\nLCF-AT"
+pause
+ret
+////////////////////
+IS_PE:
+esto
+bpmc
+find eip, #C20800#
+cmp $RESULT, 00
+jne NEXT
+/*
+If you stop here then send me your target to create a update!
+
+LCF-AT
+*/
+pause
+ret
+////////////////////
+NEXT:
+bpmc
+bp $RESULT
+esto
+bc
+bprm MAPPED_SEC, MAPPED_SEC_SIZE
+esto
+bpmc
+jmp DIRECT_CRC
+////////////////////
+VARS:
+var CheckSumMappedFile
+var MAPPED_SEC
+var MAPPED_SEC_SIZE
+ret

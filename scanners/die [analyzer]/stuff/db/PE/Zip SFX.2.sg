@@ -1,0 +1,32 @@
+// DIE's signature file
+// Author: hypn0 <hypn0@mail.ru>
+
+init("sfx","Zip SFX");
+
+function detect(bShowType,bShowVersion,bShowOptions)
+{
+    if(PE.compareEP("558bec6a..68........68........64a1........50648925........83....5356578965..ff15"))
+    {
+        if(PE.findSignature(PE.getOverlayOffset(),Math.min(255,PE.getOverlaySize()),"'PK'0304")!=-1)
+        {
+            bDetected=1;
+        }
+    }
+    else if(PE.compareEP("558bec83c4..b8........e8........33c05568........64ff30648920e8"))
+    {
+        if(PE.resource[0].Type==784) //ZIP
+        {
+            bDetected=1;
+        }
+    }
+    else if(PE.compareEP("e8$$$$$$$$8bff558bec83ec..a1........8365....8365....5357bf........bb"))
+    {
+        if(PE.compareOverlay("'PK'0304"))
+        {
+            sOptions="by Intel";
+            bDetected=1;
+        }
+    }
+
+    return result(bShowType,bShowVersion,bShowOptions);
+}

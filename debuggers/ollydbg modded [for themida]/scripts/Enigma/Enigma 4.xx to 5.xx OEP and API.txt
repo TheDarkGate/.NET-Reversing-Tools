@@ -1,0 +1,60 @@
+//Created by ramjane
+//Its my first script 
+//Just fix VM api 
+bphwc
+var sec
+var ENIGMA
+var GetProcAddress
+var RET
+var EP
+mov EP,eip
+gpa "GetProcAddress" , "Kernel32.dll"
+mov GetProcAddress, $RESULT
+alloc 1000
+mov sec,$RESULT
+mov [sec],#606A006A00E8837AAA906190#
+eval "call {GetProcAddress}"
+asm sec+05, $RESULT
+mov eip,sec
+bp eip+0B
+bp GetProcAddress
+run
+bc eip
+rtr
+mov RET, eip
+run
+bc
+mov eip,EP
+bphws RET
+esto
+free sec
+mov ENIGMA, esi
+bphwc
+var OEPBP
+var VABP
+var APICALL
+gpa "VirtualAlloc", "kernel32.dll"
+mov VABP, $RESULT
+bp VABP
+run
+bc
+rtr
+sti
+find ENIGMA, #FF0081C2E0#
+mov OEPBP,$RESULT
+bphws OEPBP, "x"
+find ENIGMA,#3D00F00000#
+mov APICALL,$RESULT
+eval "inc eax"
+asm APICALL-15, $RESULT
+eval "nop"
+asm APICALL-14,$RESULT
+run
+bphwc
+bphws ecx
+run
+sti
+cmt eip, "OEP"
+bphwc
+msg "OEP found just fix VM OEP"
+ret

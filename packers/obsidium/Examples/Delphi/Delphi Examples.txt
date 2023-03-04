@@ -1,0 +1,9 @@
+Keygen Example
+    Key generation sample application, shows how to use
+    GenerateKeyfile, ConvertLicenseLongToStr
+Sample Application
+    Sample application using short license keys, shows how to use
+    obsIsLicensed, obsGetLicenseInfo, setShortKey, obsSetLicenseShort,
+    code encryption and virtualization
+
+You need the files from SDK\Delphi to compile the examples.

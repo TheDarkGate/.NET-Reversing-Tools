@@ -1,0 +1,82 @@
+// Enigma protector 4.xxx and 5.xxx OEP FIND alpha 0.1 - giv
+// giv@reversing.ro
+// 2015
+// Made in Romania
+// This works for the files that does not have a HWID protection
+// Just make basic settings on OllyDBG that the file will run under the debugger
+// Remember to have DrX enabled as this use hardware breakpoints
+// For Enigma protected files version 4.xx and 5.xx
+
+msgyn "The OEP was found before?"
+cmp $RESULT, 1
+je final
+
+bc
+bphwc
+lc
+
+/////////////////////////////////////
+
+//GMEMI eip, MEMORYBASE
+//mov baza_memorie, $RESULT
+mov baza_memorie, 00401000
+//log $RESULT
+GPA "VirtualProtect", "kernel32.dll" 
+mov VirtualProtect, $RESULT
+bp VirtualProtect
+run
+rtr
+run
+rtr
+bc
+
+GPA "GetModuleHandleA", "kernel32.dll" 
+mov GetModuleHandleA, $RESULT
+bp GetModuleHandleA
+run
+rtr
+run
+rtr
+bc
+jmp gasire_loc
+
+vprotect_loop:
+bp VirtualProtect
+run
+bc VirtualProtect
+jmp gasire_loc
+
+/////////////////////////////////////
+gasire_loc:
+findmem #FFE0E904000000#, baza_memorie
+mov cautareoep, $RESULT
+log "OEP JUMP:"
+log cautareoep, ""
+log ""
+log "Made in Romania"
+eval "The jump to entrypoint is {cautareoep}\r\n\r\nMade in Romania\r\n\r\n2015\r\n\r\nGIV"
+msg $RESULT
+
+cmp cautareoep, 0
+ifeq
+//msg "OEP marker have not been found."
+//jmp sfarsit
+jmp vprotect_loop
+endif
+GMEMI cautareoep, MEMORYBASE
+//log $RESULT, ""
+
+
+gasire_jmp_eax:
+bphws cautareoep
+msg "The program will be reloaded in Olly. Resume the script on restart. On the question regarding OEP found press YES."
+reset
+
+final:
+erun
+esti
+cmt eip, "<-------------This is the entry point - GIV"
+bphwc 
+
+sfarsit:
+ret

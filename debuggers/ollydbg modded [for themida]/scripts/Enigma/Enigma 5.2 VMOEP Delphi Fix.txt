@@ -1,0 +1,117 @@
+LC
+LCLR
+
+VAR oep
+VAR currentinst
+VAR returnvalue
+VAR address
+VAR oldeax
+VAR oldecx
+VAR oldedx
+var size
+var codesection
+var endsection
+var endsectionsize
+//===============================================
+// Settings
+MOV oep,		007AD85C
+mov codesection, 	00401000
+mov size, 		003AB000
+//mov endsection, 	7FBD0000 // this could be on another address
+//mov endsectionsize, 003D1000
+//===============================================
+// break on OEP
+BPHWCALL
+BPHWS oep,"x"
+run
+BPHWC oep
+//===============================================
+BPRM codesection, size
+run
+//===============================================
+// first run
+WRT  "VMOEP.txt", "push ebp"
+WRTA "VMOEP.txt", "mov ebp,esp"
+WRTA "VMOEP.txt", "add esp,-10"  // also check this
+ITOA eax
+WRTA "VMOEP.txt", "mov eax," + $RESULT
+ITOA eip
+WRTA "VMOEP.txt", "call " + $RESULT
+CALL copyregisters
+find eip, #5?c3#   // pop ?? RET, on some target it is  pop ?? CALL ????? RET so the pattern could be changed
+bpmc
+bp $RESULT+1
+ERUN
+bc eip
+esti
+//===============================================
+again:
+BPRM codesection, size	
+erun
+bpmc
+MOV currentinst, [eip], 1
+
+cmp currentinst, 53  // push ebx
+jne test1
+call logregisters
+FIND eip, #5bc3# 		// pop ebx; ret
+cmp $RESULT, 0
+je ends
+bp $RESULT +1
+ERUN
+bc eip
+esti
+jmp again
+
+test1:
+cmp currentinst, 55  // push ebp
+jne again
+call logregisters
+FIND eip, #5dc3# 		// pop ebp; ret
+cmp $RESULT, 0
+je ends
+bp $RESULT+1
+ERUN
+bc eip
+esti
+jmp again
+
+//===============================================
+logregisters:
+
+//ifneq eax, oldeax
+     MOV address, eax
+     FINDMEM address, codesection
+     CMP $RESULT, 0
+     JE ends
+     EVAL "MOV EAX,DWORD [0x{$RESULT}]"
+     WRTA "VMOEP.txt",$RESULT
+     MOV oldeax, eax
+//endif
+
+ifneq ecx, oldecx
+     ITOA ecx
+     WRTA "VMOEP.txt","MOV ECX," + $RESULT     
+     MOV oldecx, ecx
+endif
+
+ifneq edx,oldedx
+     ITOA edx
+     WRTA "VMOEP.txt","MOV EdX," + $RESULT     
+     MOV oldedx, edx
+endif
+
+ITOA eip
+WRTA "VMOEP.txt","call " + $RESULT
+ret
+//===============================================
+copyregisters:
+MOV oldeax, eax
+MOV oldecx, ecx
+MOV oldedx, edx
+ret
+//===============================================
+ends:
+LOG "could not find address"
+PAUSE
+ret

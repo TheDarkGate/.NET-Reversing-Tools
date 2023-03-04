@@ -1,0 +1,86 @@
+/////////////////////////////////////////
+//
+// Simple script which dumps the VM
+// 
+// enigma 4.2 patch HWID and unpackmeSingle
+//
+// pass: unpackme
+//
+// LCF-AT
+//
+/////////////////////////////////////////
+var SIZE1
+var SIZE2
+var BASE
+gmi eip, MODULEBASE
+mov BASE,  $RESULT
+bphwc
+mov ID,    00129E4E+BASE
+mov OEP,   0004ED20+BASE
+mov VA,    0019ABD7+BASE
+mov TYPE,  00101000 //  MEM_COMMIT|MEM_TOP_DOWN
+mov SIZE1, 00100000
+alloc 01000000
+mov MYSEC,  $RESULT
+mov MYSEC2, MYSEC
+bphws OEP
+bphws ID
+bphws VA
+bpgoto VA,  VASTOP
+bpgoto ID,  IDSTOP
+bpgoto OEP, OEPSTOP
+///////////////////////
+RUN:
+esto
+pause
+pause
+///////////////////////
+VASTOP:
+cmp [esp], 0
+jne RUN
+cmp [esp+4], SIZE1
+je A1
+cmp [esp+08], TYPE
+jne RUN
+mov [esp+08], 1000  //  MEM_COMMIT
+mov SIZE2, [esp+04]
+///////////////////////
+A1:
+bphwc eip
+bphws eip+06
+esto
+bphwc eip
+bphws VA
+mov eax, MYSEC
+cmp SIZE2, 0
+je A2
+add MYSEC, SIZE2
+mov SIZE2, 0
+bphwc VA
+esto
+pause
+///////////////////////
+A2:
+add MYSEC, SIZE1
+esto
+pause
+///////////////////////
+IDSTOP:
+bphwc ID
+bphwc VA
+mov !ZF, 00
+esto
+pause
+///////////////////////
+OEPSTOP:
+bphwc
+mov eax, MYSEC2
+mov edi, eax
+sub edi, BASE
+mov ecx, MYSEC
+sub ecx, eax
+eval "{eax} VA - {edi} RVA.mem"
+dm eax,ecx, $RESULT
+msg "Now dump file / Add section use right RVA / Validate file & Fix file! \r\n\r\nLCF-AT"
+pause
+ret

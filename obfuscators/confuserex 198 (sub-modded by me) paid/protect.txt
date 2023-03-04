@@ -1,0 +1,5 @@
+anti dump
+fake obfuscators
+type scramble
+memory protection
+(OPTIONAL) module properties

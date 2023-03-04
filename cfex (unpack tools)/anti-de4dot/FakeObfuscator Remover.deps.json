@@ -1,0 +1,53 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FakeObfuscator Remover/1.0.0": {
+        "dependencies": {
+          "de4dot.blocks": "3.1.41592.3405",
+          "dnlib": "3.3.1.0"
+        },
+        "runtime": {
+          "FakeObfuscator Remover.dll": {}
+        }
+      },
+      "de4dot.blocks/3.1.41592.3405": {
+        "runtime": {
+          "de4dot.blocks.dll": {
+            "assemblyVersion": "3.1.41592.3405",
+            "fileVersion": "3.1.41592.3405"
+          }
+        }
+      },
+      "dnlib/3.3.1.0": {
+        "runtime": {
+          "dnlib.dll": {
+            "assemblyVersion": "3.3.1.0",
+            "fileVersion": "3.3.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FakeObfuscator Remover/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "de4dot.blocks/3.1.41592.3405": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dnlib/3.3.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,20 @@
+
+
+Plugin for Peid.exe ( ver 0.2 )
+
+
+
+This plugin run EXEinfoPe.exe
+
+
+1. copy to plugin directory
+2. Run exeinfope and set "Shell integration +"  - in Options menu
+   ( minimum 0.0.1.8 F exeinfope required )
+
+
+
+ver. w/o PeSpin
+
+
+
+	2008.10.28 A.S.L

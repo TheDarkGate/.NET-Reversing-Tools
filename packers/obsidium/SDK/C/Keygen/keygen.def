@@ -1,0 +1,24 @@
+LIBRARY	"keygen"
+
+EXPORTS
+GenerateLicenseLong@4=GenerateLicenseLong	@1
+GenerateLicenseLongW@4=GenerateLicenseLongW	@2
+VerifyLicenseLong@4=VerifyLicenseLong		@3
+VerifyLicenseLongW@4=VerifyLicenseLongW		@4
+GenerateLicenseShort@4=GenerateLicenseShort	@5
+GenerateLicenseShortW@4=GenerateLicenseShortW	@6
+VerifyLicenseShort@4=VerifyLicenseShort		@7
+VerifyLicenseShortW@4=VerifyLicenseShortW	@8
+ConvertLicenseLongToStr@12=ConvertLicenseLongToBin	@9
+ConvertLicenseLongToBin@8=ConvertLicenseLongToBin	@10
+GetLicenseHash@12=GetLicenseHash			@11
+GenerateSignature@16=GenerateSignature		@12
+GenerateSignatureW@16=GenerateSignatureW	@13
+GenerateSignatureFromFile@12=GenerateSignatureFromFile	@14
+GenerateSignatureFromFileW@12=GenerateSignatureFromFileW	@15
+VerifySignature@16=VerifySignature			@16
+VerifySignatureW@16=VerifySignatureW		@17
+VerifySignatureFromFile@12=VerifySignatureFromFile	@18
+VerifySignatureFromFileW@12=VerifySignatureFromFileW	@19
+CompareSystemIds@12=CompareSystemIds		@20
+CompareSystemIdsW@12=CompareSystemIdsW		@21

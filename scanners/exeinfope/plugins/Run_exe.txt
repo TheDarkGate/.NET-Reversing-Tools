@@ -1,0 +1,25 @@
+	         Plugin Run_exe.dll 
+	     for ExeinfoPe.exe & PeID.exe
+	( universal runner for external exe programs )
+	             ver.0.1b
+
+
+	- copy all files to plugins directory
+
+You can run any exe , just edit file "Run_exe.ini"  and enter name.exe
+if file located in plugins directory or full path and name if file is placed on disk.
+ example : "XNResourceEditor.exe"  or  "C:\Program Files\PE Explorer\pexplorer.exe"
+
+
+
+
+		www.exeinfo.go.pl  
+
+		A.S.L ( c ) 2008
+
+
+
+
+
+
+

@@ -1,0 +1,128 @@
+/*
+// Developed by "sieutruc@gmail.com", 
+// giv@reversing.ro
+// 31 2016
+// Version 0.1
+// credit to GIV
+*/
+bc
+bphwc
+bpmc
+lc
+
+var oep
+var counter
+var SPLICE_LEN
+var TMP_1
+
+ask "Enter new EIP"
+cmp $RESULT,0
+je FINISH_1
+mov oep, $RESULT //00401130
+
+bphws oep
+run
+
+gmi eip, MODULEBASE
+mov IMAGEBASE, $RESULT
+gmi eip, CODEBASE
+mov codeBase, $RESULT
+gmi eip, RESBASE
+mov resourceBase, $RESULT
+GMEMI eip, MEMORYSIZE
+mov codesize, $RESULT
+
+mov counter, 1
+alloc 1000
+mov SPLICE_REG, $RESULT
+mov SPLICE_LEN,0
+
+findmem #E9??????02#, codeBase
+
+CONTINUE:
+cmp counter, 1
+ifeq
+	jmp CONTINUE_1
+endif
+findmem #E9??????02#, jumpFound
+
+CONTINUE_1:
+cmp $RESULT, 0
+ifeq	
+	je pause
+endif
+mov jumpFound, $RESULT
+gci jumpFound, DESTINATION
+mov virtualMemoryZone, $RESULT
+gmemi virtualMemoryZone, MEMORYBASE
+mov spliceAddress, $RESULT
+gmemi virtualMemoryZone, MEMORYSIZE
+mov spliceSize, $RESULT
+cmp spliceSize,0
+ifeq
+	jmp CONTINUE_2
+endif
+
+MESSAGE_SPLICES:
+mov SPLICE_MEM1, spliceAddress
+gmi eip, MODULEBASE
+mov X, $RESULT
+sub SPLICE_MEM1,X
+mov SPLICESRVA, SPLICE_MEM1
+
+cmp SPLICE_LEN, 0
+ifeq
+	jmp SAVE_VIRTUAL_MEMORY
+endif
+
+mov TMP,0
+LOOP_FIND:
+mov TMP_1, SPLICE_REG + TMP
+cmp [TMP_1], 0
+je SAVE_VIRTUAL_MEMORY
+cmp [TMP_1], spliceAddress
+ifeq
+	jmp CONTINUE_2
+endif
+add TMP,0C
+jmp LOOP_FIND
+
+SAVE_VIRTUAL_MEMORY:
+mov [SPLICE_REG + SPLICE_LEN],spliceAddress
+mov [SPLICE_REG + SPLICE_LEN + 4],SPLICESRVA
+mov [SPLICE_REG + SPLICE_LEN + 8],spliceSize
+add SPLICE_LEN, 0c
+
+CONTINUE_2:
+add jumpFound, 5
+inc counter
+cmp jumpFound, resourceBase
+ifa
+	jmp pause
+endif
+jmp CONTINUE
+
+pause:
+pause
+
+mov TMP,0
+mov SPLICE_BASE, 0
+mov SPLICES_RVA, 0
+LOOP_DUMP:
+cmp [SPLICE_REG + TMP],0
+je FINISH
+mov SPLICE_BASE, [SPLICE_REG + TMP]
+mov SPLICES_RVA, [SPLICE_REG + TMP + 4]
+mov SPLICES_SIZE, [SPLICE_REG + TMP + 8]
+eval "Splices_VA_{SPLICE_BASE}_{SPLICES_RVA}.bin"
+mov SPLICE_FILENAME, $RESULT
+dm SPLICE_BASE, SPLICES_SIZE, SPLICE_FILENAME
+add TMP,0C
+jmp LOOP_DUMP
+
+FINISH:
+free SPLICE_REG
+pause
+
+FINISH_1:
+pause

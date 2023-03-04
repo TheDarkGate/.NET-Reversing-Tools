@@ -1,0 +1,114 @@
+Info
+====
+This directory contains all the files needed to use the key generation
+CGI on x86 *nix systems (tested on Debian, Red Hat and OpenBSD/FreeBSD).
+A PHP example script is included as well.
+
+Installing and using the CGI
+============================
+To use the CGI, place its executable (nph-keygen_get or nph-keygen_post)
+in your cgi-bin directory. Adjust the file's flags so it can be
+executed (CHMOD 755).
+Make sure your FTP client's transfer mode is set to 'binary'.
+The executables may be renamed as needed, however, since they are
+NPH binaries, their names must typically begin with "nph-".
+Some web servers may also require you to add a '.cgi' extension.
+
+The CGI accepts the following (case-sensitive) parameters:
+    project           project file name (required)
+    type              type of key to generate ('short' or 'long', required except
+                      for signature generation/verification)
+    advanced          generate advanced short key? ('true' or 'false',
+                      required for short keys)
+    info1             license information string (required for short keys)
+    info2             "" (long keys only)
+    info3             ""
+    info4             ""
+    cval              custom value (short keys only, given as decimal 0-65535)
+    expdate           license expiration date (format yyyy-mm-dd)
+    systemid          system ID
+    usbid             USB device ID
+    legacy            use legacy hardware-locking? ('true' or 'false')
+    genpairs          output key:value pairs instead of raw data when generating
+                      license keys ('true' or 'false') Raw data uses DOS line
+                      breaks
+    verify            license verification mode ('true' or 'false')
+    encoding          value encoding ('plain', 'base64', 'urlencode'),
+                      default is urlencode
+    key               license key to verify
+    compare_sysids    system ID comparison mode, set to 'true' to enable
+    systemid1         required when comparing IDs
+    systemid2         required when comparing IDs
+    sig_create        create signature ('true' or 'false')
+    sig_verify        verify signature ('true' or 'false')
+    sig_data          the data to be signed, assumed to be base64 encoded
+                      by default
+    sig_data_encoding encoding of sig_data parameter ('plain', 'base64')
+    sig_file          the file containing the data to be signed
+    sig               the signature to be verified
+
+When verifying license keys, the following parameters must be set:
+    type
+    key
+    project
+    systemid        (when using short keys and non-legacy hardware-locking)
+    info1           (when using short keys)
+
+If verification is successful, the CGI will return a plain-text list of
+key-value-pairs.
+Each key and its value are separated by a colon. The key-value-pairs are
+separated by UNIX style line breaks. The returned keys are:
+valid, hash, info1, info2, info3, info4, systemid, usbid, cval, expdate
+If a key has no associated value (e.g. if a license key does not have an
+expiration date set), it is omitted from the list.
+A typical output will look like this:
+
+hash:30bee4a894bdcec47f4a69508392c736
+info1:John Doe
+valid:true
+
+See keyver_long.php for an example on how to parse the CGI output.
+
+When generating license keys with the 'genpairs' parameter set to 'true',
+the CGI will return the following keys:
+key (long keys)
+key, info1, systemid (short keys)
+
+The CGI returns the following HTTP status codes:
+    200             license key generation / verification successful
+    400             invalid parameters passed to CGI
+    500             license key generation / verification failed
+
+In case there was an error during key generation/verification, an additional
+error string is returned which contains an error code as defined in the
+keygen header file (SDK\C\Keygen\keygen.h).
+
+System ID comparison mode returns the number of different hardware components.
+
+Signature generation mode will return the plain signature data unless
+'genpairs' is enabled, in which case a single 'signature' key will be returned.
+
+Signature verification mode returns a single key named 'valid'.
+
+keygen_short.php and keyver_long.php demonstrate how to use the CGI from 
+within PHP scripts.
+
+Security notes
+==============
+Access to the license generator should only be granted to certain IPs
+(e.g. localhost, 3rd party e-commerce providers etc.).
+No information about the license generation process (i.e. names of the
+CGI and project files) should be visible to users. For this reason
+it should not be possible to call the CGI directly, e.g. by an HTML form.
+Also try to make sure the project file can only be read by the CGI.
+
+List of included files
+======================
+    bin
+        centos-5.5              CGI compiled on CentOS 5.5
+        freebsd-4.5             CGI compiled on FreeBSD 4.5
+        gcc-3.3                 CGI compiled on Debian using GCC 3.3
+        gcc-4.3                 CGI compiled on Debian using GCC 4.3
+    keyver_long.php             license verification example script
+    keygen_short.php            license generator example script
+    keygen_short_test.html      license generator test form

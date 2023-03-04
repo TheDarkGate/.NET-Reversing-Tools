@@ -1,0 +1,9 @@
+{
+  "anticaptcha": "Key",
+  "deathbycaptcha": "User:Pass",
+  "imagetyperz": "Key",
+  "capmonster": "Key:Domain:Port",
+  "twocaptcha": "Key",
+  "rucaptcha": "key",
+  "service": "TwoCaptcha"
+}

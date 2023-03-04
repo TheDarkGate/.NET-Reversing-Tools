@@ -1,0 +1,34 @@
+
+
+       Advanced Config v1.5.0.2 for Exeinfo PE
+
+   You can change options inaccessible in Exeinfo PE 
+
+
+ This version can change : 
+
+- Server for file extension checker ( default is : www.fileinfo.com )
+- Change file/path fo Trid.exe - binary file checker ( console tool )
+- Change file/path fo de4dot.exe .NET unpacker ( console tool ) - at ExeinfoPE v.0.0.5.5
+- Change detector DIE.EXE GUI size ( normal/minimize )
+- Set Font to BOLD on main Window (Diagnose and Lamer Hint )
+- Disable/Enable Color Hand cursor
+- Set file/path to Hiew32.exe - at ExeinfoPE v.0.0.4.6 II
+
+- add : download ( Trid/Die/Hiew/de4dot )
+
+
+
+
+
+
+	A.S.L ( c ) 2019.08.08 - asl@onet.eu
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+ Plugin for DIE.exe [ ver.0.2 ]  ( http://hellspawn.nm.ru )
+
+
+ This plugin run EXEinfoPe.exe ( www.exeinfo.go.pl )
+
+
+1. copy to DIE plugin directory
+2. Run exeinfope and set "Shell integration +"  - in Options menu
+   ( minimum ver.0.0.1.8 F Exeinfope required )
+
+
+
+
+
+
+
+	2008.03.14 A.S.L

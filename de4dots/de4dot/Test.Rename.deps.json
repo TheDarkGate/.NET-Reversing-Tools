@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Test.Rename/3.1.41592.3405": {
+        "dependencies": {
+          "Test.Rename.Dll": "3.1.41592.3405"
+        },
+        "runtime": {
+          "Test.Rename.dll": {}
+        }
+      },
+      "Test.Rename.Dll/3.1.41592.3405": {
+        "runtime": {
+          "Test.Rename.Dll.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Test.Rename/3.1.41592.3405": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Test.Rename.Dll/3.1.41592.3405": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

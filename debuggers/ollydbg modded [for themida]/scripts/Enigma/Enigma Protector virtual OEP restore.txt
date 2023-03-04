@@ -1,0 +1,313 @@
+// giv@reversing.ro
+// Script for restore VM OEP on Enigma 5.xx VM'ed OEP
+// Delphi files + VB6
+
+bc
+lc
+bphwc
+bpmc
+dbh
+
+GMI eip, CODEBASE
+mov bazacod, $RESULT
+GMI eip, CODESIZE
+mov marimecod, $RESULT
+
+VAR INTRARE
+ask "Enter the EIP of the stolen OEP"
+mov INTRARE, $RESULT
+//mov INTRARE, 0041F372
+
+
+BPHWS INTRARE
+erun
+bphwc INTRARE
+
+ask "Enter compiler type: 1 for Delphi 2 for Visual Basic 3 for C++"
+mov tipcompilator, $RESULT
+cmp $RESULT,1 
+ifeq
+jmp Delphi
+endif
+cmp $RESULT,2 
+ifeq
+jmp vb6
+endif
+cmp $RESULT,3
+ifeq
+jmp C_plus
+endif
+
+//Target compiler select
+mov delphi, 1
+mov vb6, 0
+mov cpp, 0
+/////////////////
+
+
+cmp delphi, 1
+ifeq
+jmp Delphi
+endif
+
+cmp vb6, 1
+ifeq
+jmp vb6
+endif
+
+cmp cpp, 1
+ifeq
+jmp C_plus
+endif
+
+
+Delphi:
+log "PUSH EBP"
+log "MOV EBP, ESP"
+log "ADD ESP, -10"
+
+BREAK:
+
+bc
+bphwc
+bpmc
+
+BPRM bazacod, marimecod
+erun
+cmp eip, INTRARE
+ifeq
+jmp BREAK
+endif
+cmp eip, bazacod+marimecod
+ifa
+jmp BREAK
+endif
+cmp eax, 01000000
+ifa
+jmp DWORD
+endif
+cmp [eip], #FF25#, 2
+ifeq
+jmp BREAK
+endif
+mov valoareeax, eax
+eval "MOV EAX, 00{valoareeax}"
+LOG $RESULT, ""
+eval "MOV ECX, 00{ecx}"
+log $RESULT, ""
+eval "MOV EDX, 00{edx}"
+log $RESULT, ""
+mov pozitie, eip
+eval "CALL 0{pozitie}"
+log $RESULT, ""
+
+GASIRE_RET:
+bpmc
+cmp [eip], #FF25#, 2
+ifeq
+jmp BREAK
+endif
+find eip, #C3#, 5
+mov adresagasitaret, $RESULT
+cmp adresagasitaret, 0
+ifa
+bp adresagasitaret
+erun
+bc adresagasitaret
+esti
+gci eip, COMMAND 
+mov stringoep, $RESULT
+scmpi stringoep, "PUSH 0x0", 4
+cmp $RESULT, 0
+ifa
+jmp Comanda_gci
+endif
+esti
+jmp Comanda_gci
+endif
+
+
+find eip, #5?C?#, 1500
+mov adresagasitaret, $RESULT
+cmp adresagasitaret, 0
+ifa
+mov diferenta, adresagasitaret-eip
+cmp diferenta, 35
+ifb
+cmp [adresagasitaret], #5BC3#, 2
+ifeq
+bpmc 
+bp adresagasitaret
+erun
+esti
+esti
+jmp Comanda_gci
+endif
+cmp [adresagasitaret], #5DC2#, 2
+ifeq
+bpmc 
+bp adresagasitaret
+erun
+esti
+esti
+jmp Comanda_gci
+endif
+msg "Diferenta prea mica"
+endif
+mov adresacomparare, adresagasitaret
+add adresacomparare, 1
+cmp [adresacomparare], #C3#,1
+ifneq
+mov start, eip
+add start, 35
+find start,#E8????????C3#
+bp $RESULT
+erun
+bc
+find eip, #5?C?#
+bp $RESULT
+erun
+bc
+esti
+esti
+jmp Comanda_gci
+//msg "Pauza C3"
+endif
+bp adresagasitaret
+erun
+bc adresagasitaret
+esti
+esti
+jmp Comanda_gci
+endif
+
+find eip, #5?5?5?5?C3#,500
+bpmc
+mov adresagasitaret, $RESULT
+cmp adresagasitaret, 0
+ifa
+bp adresagasitaret
+erun
+bc adresagasitaret
+esti
+esti
+jmp Comanda_gci
+endif
+
+cmp adresagasitaret, 0
+
+Continuare_ret:
+bpmc
+ifa
+bp adresagasitaret
+bpmc
+erun
+endif
+bc adresagasitaret
+esti
+esti
+Comanda_gci:
+GCI eip, COMMAND
+mov comanda, $RESULT
+scmpi comanda, "PUSH 0x0", 4
+ifneq
+jmp GASIRE_RET
+endif
+jmp BREAK
+
+DWORD:
+/////////
+bc
+bphwc
+/////////
+mov gasire, eax
+rev gasire
+mov gasire, $RESULT
+///////////////////
+eval "{gasire}"
+mov gasire, $RESULT
+//////////////////
+len gasire
+cmp $RESULT, 7
+ifeq
+eval "0{gasire}"
+mov gasire, $RESULT
+jmp ansamblare_gasire
+endif
+len gasire
+cmp $RESULT, 6
+ifeq
+eval "00{gasire}"
+mov gasire, $RESULT
+endif
+//log gasire, ""
+ansamblare_gasire:
+eval "#{gasire}#"
+mov gasire, $RESULT
+findmem gasire, bazacod
+mov adresa_p, $RESULT
+cmp adresa_p, 0
+ifeq
+msg "Pointer negasit"
+pause
+endif
+ifa
+eval "MOV EAX, DWORD PTR[{adresa_p}]"
+log $RESULT, ""
+cmp ecx, 401000
+ifa
+eval "MOV ECX, 00{ecx}"
+log $RESULT, ""
+endif
+cmp edx, 401000
+ifa
+eval "MOV EDX, 00{edx}"
+log $RESULT, ""
+endif
+mov pozitie, eip
+eval "CALL 0{pozitie}"
+log $RESULT, ""
+jmp GASIRE_RET
+
+vb6:
+findmem #5642??21#, bazacod
+mov variabilapush, $RESULT
+cmp variabilapush,0
+ifeq
+msg "Pattern not found for push value - VB6"
+jmp Sfarsit
+endif
+eval "PUSH 00{variabilapush}"
+LOG $RESULT, ""
+asm eip, $RESULT
+mov variabilacall, eip-6
+eval "CALL 00{variabilacall}"
+LOG $RESULT, ""
+asm eip+5, $RESULT
+jmp Sfarsit
+
+C_plus:
+bc
+bphwc
+bpmc
+BPRM bazacod, marimecod
+erun
+MOV intrarecallc, eip
+EVAL "CALL {intrarecallc}"
+log $RESULT, ""
+ASM INTRARE, $RESULT
+bc
+bphwc
+bpmc
+rtr
+esti
+BPRM bazacod, marimecod
+erun
+MOV jmpc, eip
+EVAL "JMP {jmpc}"
+log $RESULT, ""
+ASM INTRARE+5, $RESULT
+jmp Sfarsit
+
+Sfarsit:
+msg "Script is finished"

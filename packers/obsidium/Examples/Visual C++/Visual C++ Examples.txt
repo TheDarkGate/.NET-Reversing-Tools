@@ -1,0 +1,21 @@
+Obsidium Long Keygen
+    Long license key generation application using MFC.
+Obsidium Short Keygen
+    Short license key generation application using MFC.
+Sample Application
+    Sample application illustrating the use of the protection API.
+SystemID
+    Minimalistic console application that displays the system ID.
+VistaRegistryExample
+    This example demonstrates how to store short license keys
+    for all users in the registry, which requires administrative
+    privileges
+
+How to compile:
+
+- Use the LIB tool (included with Visual C++) to create the library files:
+  lib /def:dummy.def
+  or
+  lib /def:keygen.def
+  and copy the resulting .lib files to the application directory
+  The .def files are located in the SDK\C folder

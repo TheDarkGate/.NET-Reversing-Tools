@@ -1,0 +1,141 @@
+lc
+log "Enigma 5.xx OEP Finder by PC-RET v 1.1 started"
+bc
+dbh
+
+bphwc
+gmi eip, MODULEBASE
+MOV IMAGEBASE, $RESULT
+//gmi eip, CODEBASE
+//MOV CODEBASE, $RESULT
+//gmi eip, CODESIZE
+//MOV CODESIZE, $RESULT
+
+pusha
+mov eax, IMAGEBASE
+mov edi, eax
+add eax, 3C
+mov eax, edi+[eax]
+mov SECTIONS, [eax+06], 02
+mov esi, eax+0F8
+mov edi, 28
+mov ebp, SECTIONS
+mov ecx, edi
+mul edi, 1 // second section
+add edi, esi
+sub edi, 28
+mov CODEBASE, [edi+0C]
+add CODEBASE, IMAGEBASE
+mov CODESIZE, [edi+08]
+popa
+
+GPA "VirtualAlloc", "kernel32.dll" 
+mov VirtualAlloc, $RESULT
+GPA "VirtualProtect", "kernel32.dll" 
+mov VirtualProtect, $RESULT
+GPA "VirtualQuery", "kernel32.dll" 
+mov VirtualQuery, $RESULT
+bphws VirtualAlloc
+run
+rtr
+esti
+bphwc VirtualAlloc
+
+gmemi eip, MEMORYBASE
+mov ENIGMA_SECTION, $RESULT
+mov startsearch, ENIGMA_SECTION
+find startsearch, #8945F8EB0C8BCF8BD68B45FCE8????????F6C304740B8B55F88B45FC# // structure
+cmp $RESULT, 0
+je dynamic_find
+static_find:
+bp $RESULT
+esto
+gmemi esi, MEMORYBASE
+mov startsearch, $RESULT
+gmemi esi, MEMORYSIZE
+mov searchend, $RESULT
+add searchend, startsearch
+alloc 100
+mov eval_section, $RESULT
+mov [eval_section], #609CB8AAAAAAAABBBBBBBBBBB9CCCCCCCCBADDDDDDDD3BC20F831F0000003918740D813800004000740583C004EBE73948100F840800000083C004EBD99D61908B70F803F39D6190#
+mov [eval_section+3], startsearch
+mov [eval_section+8], IMAGEBASE
+mov [eval_section+D], CODESIZE
+mov [eval_section+12], searchend
+bp eval_section+3f
+bp eval_section+45
+bp eval_section+47
+mov bakeip, eip
+mov eip, eval_section
+esto
+cmp eip, eval_section+3f
+je notfound_static
+cmp eip, eval_section+45
+je found_static
+jmp error
+found_static:
+///////////////////////You can stop here and see OEP in ESI register///////////////////////
+mov oep, esi
+esto
+mov eip, bakeip
+bc
+free eval_section
+gmemi oep, MEMORYBASE
+cmp $RESULT, 0
+jne not_invalid_oep
+eval "Invalid OEP found: {oep}. Now script will try another method."
+msg $RESULT
+jmp dynamic_find
+not_invalid_oep:
+
+mov oepbytes, [oep], 2
+cmp oepbytes, 25ff
+je risc_oep
+
+cmp $RESULT, CODEBASE
+je good_oep
+eval "Some weird OEP found: {oep}. Do you want to continue or try using another method? \r\n\r\n\r\nContinue: NO\r\nAnother method: YES"
+msgyn $RESULT
+cmp $RESULT, 01
+je dynamic_find
+good_oep:
+bphws oep
+esto
+msg "OEP found!"
+bphwc
+ret
+
+risc_oep:
+eval "It seems that OEP: {oep} is RISC-protected. Continuing in another mode."
+msg $RESULT
+jmp dynamic_find
+
+notfound_static:
+mov eip, bakeip
+bc
+free eval_section
+dynamic_find:
+bphws VirtualProtect
+esto
+bphwc VirtualProtect
+bphws VirtualQuery
+mov hits, 0
+VirtualQueryloop:
+esto
+cmp [esp+4], IMAGEBASE
+je checkhits
+jmp VirtualQueryloop
+checkhits:
+inc hits
+cmp hits, 2
+jne VirtualQueryloop
+bc
+bphwc
+bprm CODEBASE, CODESIZE
+run
+bpmc
+msg "Possible OEP(near OEP) found."
+ret
+error:
+msg "Fatal error occured."
+ret

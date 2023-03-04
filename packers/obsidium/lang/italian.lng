@@ -1,0 +1,504 @@
+[Info]
+LanguageName="Italian"
+Charset="utf-8"
+Version="1.3"
+
+[frmMain]
+; main window
+Caption="Obsidium Software Protection System"
+
+; page selection buttons
+1000.Tooltip="Carica/Salva progetti"
+1001.Tooltip="Modifica impostazioni progetto"
+1002.Tooltip="Pannello Chiavi"
+1003.Tooltip="Proteggi il programma"
+1004.Tooltip="Informazioni su..."
+
+; toolbuttons
+1005.Tooltip="Crea un nuovo progetto"
+1006.Tooltip="Carica un progetto"
+1007.Tooltip="Salva un progetto"
+1008.Tooltip="Opzioni"
+
+; project management page
+1100.Caption="Pannello Progetto"
+1101.Caption="Azione"
+1102.Caption="Informazione"
+1103.Caption="Nuovo progetto"
+1103.Tooltip="Crea nuovo progetto"
+1104.Caption="Crea un nuovo progetto. Tutte le modifiche al progetto corrente saranno perse."
+1105.Caption="Carica progetto"
+1105.Tooltip="Carica un progetto esistente"
+1106.Caption="Carica un progetto precedentemente salvato. Tutte le modifiche al progetto corrente saranno perse."
+1107.Caption="Salva progetto"
+1107.Tooltip="Salva il progetto corrente"
+1108.Caption="Salva il progetto corrente."
+1109.Caption="All'avvio di Obsidium, è necessario creare un nuovo progetto o caricarne uno esistente."
+
+; options page
+1200.Caption="Opzioni"
+1201.Caption="Base\nAvanzate\nLicenze\nPeriodo Prova\nMessaggi"
+; basic settings
+1202.Caption="Impostazioni di Base"
+1203.Caption="Proteggi risorse"
+1203.Tooltip="proteggi cartella risorse(raccomandato)"
+1204.Caption="Compressione"
+1204.Tooltip="Abilita la compressione del programma"
+1205.Caption="Rimuovi esportazioni"
+1205.Tooltip="Rimuove le informazioni di esportazione(funzioni, dll, etc) dal programma"
+1206.Caption="Mantieni dati extra"
+1206.Tooltip="Mantiene i dati extra aggiunti alla fine del file"
+1207.Caption="Controlla accesso ai dati extra"
+1207.Tooltip="Controlla l'accesso ai dati extra"
+1208.Caption="Proteggi dati extra"
+1208.Tooltip="Protegge i dati extra"
+1209.Caption="Controlli Debugger"
+1209.Tooltip="Verifica presenza di debugger (raccomandato)"
+1210.Caption="Nessun messaggio se trovato"
+1210.Tooltip="Elimina il messaggio di avvertimento se viene trovato un debugger attivo"
+1211.Caption="Password di avvio"
+1211.Tooltip="Se selezionato, il programma si avvierà solo dopo l'immissione di una password"
+1212.Tooltip="Inserire la password"
+1213.Caption="Imposta variabili d'ambiente"
+1213.Tooltip="Immagazzina i parametri di protezione in variabili d'ambiente"
+1214.Caption="Nascondi variabili d'ambiente"
+1214.Tooltip="Nasconde le variabili d'ambiente da programmi di controllo memoria"
+1215.Caption="Associa licenza al computer"
+1215.Tooltip="Le licenze saranno valide solo per un determinato computer"
+1216.Caption="CPU"
+1216.Tooltip="Aggiungi informazioni della CPU alla Chiave Hardware"
+1217.Caption="Harddisk"
+1217.Tooltip="Aggiunge informazioni dell'harddisk alla Chiave Hardware"
+1218.Caption="Sistema Operativo"
+1218.Tooltip="Aggiunge informazioni sul sistema operativo alla Chiave Hardware"
+1219.Caption="Indirizzo MAC"
+1219.Tooltip="Aggiunge l'indirizzo della scheda di rete promaria(MAC) alla Chiave Hardware"
+; advanced settings
+1220.Caption="Impostazioni Avanzate"
+1221.Caption="Non relocare indirizzo immagine"
+1221.Tooltip="Forza l'avvio dall'indirizzo immagine originale(abilita per soluzione problemi)"
+1222.Caption="Elimina bytes all'Original Entry Point"
+1222.Tooltip="Elimina le prime istruzioni all'Entry Point Originale del programma (disabilita per soluzione problemi)"
+1223.Caption="Non mostrare messaggi"
+1223.Tooltip="Non mostra alcun messaggio in caso di errori"
+1224.Caption="Elimina risorse non necessarie"
+1224.Tooltip="Elimina risorse non necessarie (Opzione specifica per Delphi)"
+1225.Caption="Offusca codice Delphi/BCB"
+1225.Tooltip="Offuscamento codice Delphi/BCB (rif. documentazione)"
+1226.Caption="Protezione dinamica accesso API"
+1226.Tooltip="Abilita accesso dinamico alle API di protezione attraverso LoadLibrary/GetProcAddress"
+1227.Caption="Modifica in Runtime"
+1227.Tooltip="Modifica del codice in Runtime (disabilita per soluzione problemi)"
+1228.Caption="Controllo istruzioni in Runtime"
+1228.Tooltip="Controlla il codice in Runtime (disabilita per soluzione problemi / velocità di avvio)"
+1229.Caption="Verifica sezioni protette"
+1229.Tooltip="Verifica che non siano state modificate le sezioni protette".
+; licensing settings
+1230.Caption="Impostazioni di Licenza"
+1231.Caption="Percorso codice di registrazione:"
+1232.Caption="file di licenza"
+1232.Tooltip="I codici di registrazione saranno inseriti in un file (specifica nome)"
+1233.Caption="registro (HKEY_CURRENT_USER)"
+1233.Tooltip="I codici di registrazione saranno inseriti nel registro"
+1234.Caption="registro (HKEY_LOCAL_MACHINE)"
+1234.Tooltip="I codici di registrazione saranno inseriti nel registro"
+1235.Caption="Nome file di licenza:"
+1236.Tooltip="Inserire il nome personalizzato del file di licenza"
+1237.Caption="Per l'avvio è necessario un file di licenza valido"
+1237.Tooltip="Se abilitato, è necessario un file di licenza valido per avviare il programma"
+; time trial settings
+1238.Caption="Scade il"
+1238.Tooltip="Abilita per far scadere il programma dopo un giorno specifico"
+1239.Tooltip="Seleziona la data di scadenza"
+1240.Caption="Numero di avvii limitato:"
+1240.Tooltip="Abilita per far scadere il programma dopo un determinato numero di avvii"
+1241.Tooltip="Inserire il numero di avvii"
+1242.Caption="Mostra schermata di prova personalizzata"
+1242.Tooltip="Mostra una schermata di prova definita dal programmatore (rif. documentazione)"
+1243.Caption="Seleziona"
+1243.Tooltip="Selezopma file di dialogo"
+1244.Caption="Ritardo in secondi:"
+1245.Caption="Numero limitato di giorni:"
+1245.Tooltip="Abilita per far scadere il programma dopo un determinato numero di giorni"
+1246.Caption="Fai avviare il programma anche se scaduto"
+1246.Tooltip="Il programma si avvierà anche se scaduto (rif. documentazione)"
+1247.Caption="Resetta periodo di prova con nuova versione"
+1247.Tooltip="Concede un nuovo periodo di prova se viene installata una nuova versione del programma"
+1248.Tooltip="Inserire la versione corrente"
+1249.Caption="Rimuovi informazioni di prova"
+1249.Tooltip="Rimuove tutte le informazioni riguardanti il programma da questo computer"
+1259.Tooltip="Inserire il numero di giorni"
+1260.Caption="Impostazioni periodo di prova"
+; messages settings
+1250.Caption="Messaggi Personalizzati"
+1251.Caption="Trovato Debugger:"
+1252.Caption="Mancanza Autorizzazione:"
+;
+1253.Caption="Seleziona messagio:"
+1254.Caption="Trovato Debugger\nPeriodo di prova scaduto\nRichiesta Licenza\nErrore integrità file\nErrore allocazione memoria\nErrore caricamento DLL\nErrore Import\nErrore Import Ordinale\nErrore interno"
+1255.Caption="Titolo:"
+1256.Tooltip="Inserire il titolo del messaggio qui"
+1257.Caption="Messaggio:"
+1258.Tooltip="Inserire il testo del messaggio qui"
+
+
+; key management page
+1300.Caption="Pannello Licenze"
+1301.Caption="Sistema File di Licenza(RSA)"
+1301.Tooltip="Seleziona per utilizzare il sistema di file di licenza"
+1302.Caption="Sistema di licenze esterno"
+1302.Tooltip="Seleziona se il programma dispone già di un sistema di licenze"
+1303.Caption="Sistema File di Licenza"
+1304.Caption="Genera chiave Pubblica/Privata"
+1304.Tooltip="Genera la coppia di chiavi pubblica e privata"
+1305.Caption="512 bits\n768 bits\n1024 bits\n1536 bits\n2048 bits"
+1305.Tooltip="Seleziona la grandezza delle chiavi desiderata"
+1306.Caption="Prima di generare le chiavi, seleziona la grandezza desiderata. La generazione può impiegare un lasso di tempo considerevole."
+1307.Caption="Blocco licenze Illegali"
+1308.Caption="Blocco licenze Illegali"
+1308.Tooltip="Visualizza/Aggiungi/Rimuovi file di licenza illegali"
+1309.Caption="Clicca sul pulsante 'Blocco licenze Illegali' per visualizzarne l'elenco e aggiungerne/rimuoverne."
+1310.Caption="Generazione File di Licenza"
+1311.Caption="Genera File di Licenza"
+1311.Tooltip="Apre la finestra di generazione file di licenza"
+1312.Caption="Clicca sul pulsante 'Genera file di licenza' per aprire la finestra di generazione file di licenza o codici di registrazione per il progetto corrente."
+1313.Caption="Generazione in corso. Questa operazione può durare anche alcuni minuti, a seconda della grandezza della chiave e la velocità della CPU."
+1315.Caption="Sistema di licenze esterno"
+1316.Caption="Questa chiave verrà usata per proteggere le parti di coduice contrassegnate. (rif. documentazione)."
+1317.Caption="Carica chiave"
+1317.Tooltip="Carica la chiave da un file"
+1318.Caption="La chiave esterna è presente"
+
+; protection page
+1400.Caption="Protezione"
+1401.Caption="Impostazioni\nProgrammi"
+1402.Caption="Percorso file protetto:"
+1403.Caption="Seleziona"
+1403.Tooltip="Seleziona il percorso di uscita del file protetto"
+1404.Tooltip="Mostra lo stato di protezione del file"
+1405.Caption="Annulla in caso di errore"
+1405.Tooltip="Annulla la protezione in caso di errore (nella protezione di più files)"
+1406.Caption="Proteggi tutti"
+1406.Tooltip="Proteggi tutti i file di programma"
+1407.Caption="File da proteggere\nPercorso file protetto"
+1408.Caption="Aggiungi"
+1408.Tooltip="Aggiunge files alla lista"
+1409.Caption="Modifica"
+1409.Tooltip="Modifica i nomi dei files"
+1410.Caption="Proteggi"
+1410.Tooltip="Protegge il file selezionato"
+1411.Caption="Elimina"
+1411.Tooltip="Elimina il file selezionato dalla lista"
+
+; about page
+1500.Caption="Informazioni su Obsidium"
+1501.Caption="Questa copia di Obsidium è registrata a:"
+1502.Caption="Registra"
+1502.Tooltip="Inserisci il codice di registrazione"
+
+
+[frmBlacklist]
+; blacklisted keyfiles
+Caption="File di licenza illgali"
+
+1000.Caption="Hash\nInformazioni Licenza"
+1000.Tooltip="Lista dei file di licenza illegali"
+1001.Caption="Aggiungi file"
+1001.Tooltip="Aggiunge un file di licenza alla lista dei file illegali"
+1002.Caption="Aggiungi codice"
+1002.Tooltip="Aggiunge un codice di registrazione alla lista dei codici illegali"
+1003.Caption="Rimuovi file"
+1003.Tooltip="Rimuove il file di licenza selezionato dalla lista"
+1004.Caption="Chiudi"
+1004.Tooltip="Chiude la finestra"
+
+
+[frmEnterKey]
+; dialog for entering text keys
+Caption="Chiavi di licenza"
+
+1000.Caption="OK"
+1000.Tooltip="Chiude la finestra"
+1001.Caption="Annulla"
+1001.Tooltip="Annulla le modofiche e chiude la finestra"
+
+
+[frmFileSelect]
+; file selection dialog
+Caption="Seleziona files"
+
+1000.Caption="Seleziona files"
+1001.Caption="File da proteggere:"
+1002.Caption="Persorso file protetto:"
+1003.Caption="Seleziona"
+1004.Caption="Seleziona
+1005.Caption="OK"
+1005.Caption="Annulla"
+
+
+[frmKeygen]
+; license key generation dialog
+Caption="Generazione File di Licenza"
+
+1000.Caption="Informazioni Licenza"
+1001.Tooltip="Informazioni addizionali immagazzinate nella licenza (31 car max)"
+1002.Tooltip="Informazioni addizionali immagazzinate nella licenza (127 car max)"
+1003.Caption="Chiave Hardware"
+1004.Tooltip="La licenza sarà limitata a questa Chiave Hardware"
+1005.Caption="Opzioni"
+1006.Caption="Solo File"
+1006.Tooltip="Crea solamente un file di licenza"
+1007.Caption="Solo Testo"
+1007.Tooltip="Crea solamente un codice di registrazione"
+1008.Caption="Testo e File"
+1008.Tooltip="Creaa sia un codice di registrazione sia un file di licenza"
+1009.Caption="La licenza scade il:"
+1010.Tooltip="Se abilitato indica la data nella quale la licenza scadrà"
+1011.Caption="Genera"
+1011.Tooltip="Genera la licenza"
+1012.Caption="Chiudi"
+1012.Tooltip="Chiude la finestra"
+
+
+[frmPreferences]
+; preferences dialog
+Caption="Opzioni"
+
+1000.Caption="Percorsi"
+1001.Caption="Percorso del progetto predefinito"
+1002.Caption="Seleziona"
+1003.Caption="Opzioni"
+1004.Caption="Salva automaticamente i progetti all'uscita"
+1005.Caption="OK"
+1006.Caption="Chiudi"
+1007.Caption="Lingua Interfaccia"
+
+
+[frmProjectName]
+Caption="Progetto/Nome Programma"
+
+1000.Caption="Inserisci un nome unico per il progetto (es. il nome del programma). Questo nome è solamente ad uso interno e non potrà essere modificato in seguito."
+1001.Caption="OK"
+
+
+[frmRegister]
+Caption="Registra Obsidium"
+
+1000.Caption="Copia il codice di registrazione dall'email e incollalo qui."
+1001.Caption="OK"
+1001.Tooltip="Inserisce il codice di registrazione"
+1002.Caption="Annulla"
+1002.Tooltip="Chiude la finestra"
+
+
+[frmShowKey]
+; dialog showing generated license keys
+Caption="Codice di registrazione"
+
+1000.Caption="Salva su file"
+1000.Tooltip="Inserisci la licenza in un file"
+1001.Caption="Copia negli appunti"
+1001.Tooltip="Copia la licenza negli appunti"
+1002.Caption="Chiudi"
+1002.Tooltip="Chiude la finestra"
+
+
+[Strings]
+; default message captions
+3000="Avviso"
+3001="Errore"
+
+2001="Memory allocation error."
+2002="Errore di I/O nell'accesso al file."
+
+; blacklist dialog strings
+2000="Errore nella lettura del file di licenza."
+2003="Impossibile aprire il file di licenza."
+2004="Il file di licenza è gia invalidato."
+2005="File di licenza non valido."
+2006="Sono state invalidate "
+2007=" licenze"
+; blacklist popup menu
+2008="&Rimuovi licenza"
+2009="&Aggiungi licenza"
+2010="Aggiungi &codice di registrazione"
+2011="Aggiungi da file"
+2012="Sostituisci da file"
+
+; enter key dialog strings
+2100="Il codice di registrazione non è valido."
+
+; file selection dialog strings
+2200="Avviso: L'estensione del file è differente."
+2201="Attenzione: Percorso non valido:"
+
+; key generation dialog strings
+2300="Inserire la Chiave Hardware."
+2301="La Chiave Hardware inserita non è valida."
+2302="Impossibile creare file di licenza!"
+2303="Errore nella scrittura del file di licenza!"
+2304="Impossibile convertire il file di licenza in codice di registrazione!"
+2305="Non sono state inserite informazioni di licenza. Continuare?"
+
+; project name dialog strings
+2400="Inserire almeno 5 caratteri."
+
+; registration dialog strings
+2500="Riavviare Obsidium per completare la registrazione."
+2501="Codice di registrazione non valido."
+
+; dialog showing generated license keys
+2600="Errore nella scrittura del file!"
+2601="Impossibile creare il file!"
+
+; main window strings
+1000="Il caricamento dei progetti non è disponibile nella versione demo."
+1001="Caricato da progetto"
+1002="E' stato individuato un Debugger - si prega di disabilitarlo e di riavviare il programma."
+1003="Il periodo di prova è terminato."
+1004="Creare un nuovo progetto?"
+1005="Il progetto è stato convertito da un formato precedente. Ricarica il progetto."
+1006="Impossibile convertire il progetto da un formato precedente."
+1007="Impossibile aprire il progetto."
+1008="E' in corso la protezione, il progetto non sarà salvato. Uscire comunque?"
+1009="Generazione di licenza in corso, il progetto non sarà salvato. Uscire comunque?"
+1010="Salvare il progeto prima di uscire?"
+1011="Protezione eseguita con successo!"
+1012="Impossibile aprire il programma"
+1013="Impossibile creare il file protetto"
+1014="Programma non valido"
+1015="Programma non supportato"
+1016="Errore in scrittura del file protetto"
+1017="Errore di accesso alla memoria"
+1018="Errore nell'accesso alle risorse"
+1019="Errore nell'accesso alle esportazioni"
+1020="Errore nell'accesso alle importazioni"
+1021="Errore nella creazione/scrittura del codice di protezione"
+1022="Errore nell'accesso al TLS"
+1023="Il file è già protetto/compresso"
+1024="Errore sconosciuto"
+1028="Non è stato specificato il percorso di uscita"
+1029="Non è stato specificato il nome del file di licenza, sarà utilizzato il predefinito"
+1030="Opzioni di Chiave Hardware non valide"
+1031="Percorso non valido"
+1032="Raccolta impostazioni progetto"
+1033="File protetto "
+1034="Protezione file in corso "
+1035="Creazione file protetto..."
+1036="Apertura programma..."
+1037="Verifica programma..."
+1038="Analisi esportazioni..."
+1039="Analisi importazioni..."
+1040="Analisi risorse..."
+1041="Analisi TLS..."
+1042="Creazione/scrittura codice di protezione..."
+1043="Trovato codice protetto all'indirizzo RVA 0x"
+1044="ERRORE: Codice di protezione non supportato."
+1045="ERRORE: Codice di protezione non sincronizzato."
+1046="Trovato codice protetto all'indirizzo RVA 0x"
+1047="Errore nel caricamento di una DLL "
+1048="Assicurati che tutte le DLL richieste possano essere caricate da Obsidium."
+1049="ERRORE: Codice protetto nidificato all'indirizzo RVA 0x"
+1050="Compressione sezione (0x"
+1051=" bytes)"
+1052="Compressione 0x"
+1053="Sugerimento: Utilizza 'modifica del codice in runtime' per aumentare la sicurezza."
+1054="ATTENZIONE: Il programma è già protetto/compresso."
+1055="Inserire un valore valido per la versione.\nEsempio: 1, 1.0, 2.5"
+1056="Inserire un numero valido di giorni."
+1057="Inserire un numero valido di avvii."
+1058="Impossibile leggere il file."
+1059="Il file non contiene informazioni su finestre di dialogo."
+1071="Il testo del messaggio inserito non è valido. Riferirsi alla documentazione per i dettagli."
+
+; protected files popup menu
+1060="&Aggiungi"
+1061="&Modifica"
+1062="&Proteggi"
+1063="&Elimina"
+
+1064="Duplica inserimento per questo file."
+1065="Seleziona il percorso di uscita che verrà utilizzato per immagazzinare i files protetti."
+1066="Protezione eseguita con successo"
+1067="Errore nella protezione del file"
+1068="Sei sicuro di voler eliminare questo file?"
+1069="Le informazioni di prova del programma sono state rimosse."
+
+; open project file popup menu
+1070="Apri progetto..."
+
+
+; --- strings added in version 1.3 ---
+
+[frmEnterShortKey]
+Caption="Inserisci codice di registrazione"
+1000.Caption="Informazioni di Registrazione:"
+1001.Caption="Codice di registrazione:"
+1002.Caption="OK"
+1002.Tooltip="Chiude la finestra"
+1003.Caption="Annulla"
+1003.Tooltip="Annulla e chiude la finestra"
+
+[frmBlacklistShort]
+Caption="Blocco codici illegali"
+1000.Caption="Aggiungi codice"
+1000.Tooltip="Aggiunge un codice alla lista nera"
+1001.Caption="Rimuovi codice"
+1001.Tooltip="Rimuove il codice selezionato dalla lista"
+1002.Caption="OK"
+1002.Tooltip="Chiude la finestra"
+1003.Caption="Hash\nInformazioni Registrazione"
+1003.Tooltip="Lista dei codici di registrazione illegali"
+
+[frmMain]
+; key management page
+1319.Caption="Sistema File di Licenza(RSA)\nSistema Codice di Registrazione(ECC)\nSistema Esterno"
+1319.Tooltip="Seleziona il sistema di registrazione utilizzato nel progetto"
+1320.Caption="Per conoscere le differenze tra i sistemi di registrazione consultare la documentazione."
+1321.Caption="Sistema Codice di Registrazione"
+1322.Caption="Genera chiave Pubblica/Privata"
+1322.Tooltip="Genera la coppia di chiavi pubblica e privata"
+1323.Caption="corto\nmedio\nlungo"
+1323.Tooltip="Seleziona la dimensione del codice di registrazione"
+1324.Caption="Prima di generare le chiavi è necessario selezionare la dimensione dei codici sulla sinistra."
+1325.Caption="Blocco codici illegali"
+1326.Caption="Blocca codici illegali"
+1326.Tooltip="Visualizza/Aggiungi/Rimuovi codici illegali"
+1327.Caption="Cliccare il pulsante 'Blocca codici illegali' per visualizzare la lista di codici illegali e aggiungerne/rimuoverne."
+1328.Caption="Generazione codici"
+1329.Caption="Informazioni Registrazione:"
+1330.Caption="Codice di Registrazione:"
+1331.Caption="Genera codice"
+1331.Tooltip="Genera un nuovo codice utilizzando i settaggi correnti"
+1332.Caption="Verifica codice"
+1332.Tooltip="Verifica il codice utilizzando i settaggi correnti"
+1333.Caption="Chiave Hardware:"
+1334.Caption="Genera codice avanzato"
+1334.Tooltip="Genera codici avanzati (rif. documentazione)"
+1335.Caption="Scadenza Codice:"
+1336.Tooltip="Inserire i dati della registrazione(ex. nome utente) qui"
+1337.Tooltip="Data di scadenza codice di registrazione"
+1338.Tooltip="Il codice di registrazione sarà limitato a questa Chiave Hardware"
+1339.Caption="Copia Codice"
+1339.Tooltip="Copia il codice generato negli appunti"
+1440.Caption="Valore Personalizzato:"
+1441.Tooltip="Inserire il valore personalizzato del codice qui (rif. documentazione)"
+1442.Tooltip="Chiave Hardware di questo computer (per test)"
+; toolbuttons
+1009.Tooltip="Apri file di aiuto"
+
+[Strings]
+; frmEnterShortKey strings
+2700="Il codice di registrazione inserito sembra essere non valido o bloccato con Chiave Hardware. Inserire ugualmente?"
+; frmBlacklistShort strings
+2800="&Rimuovi codice"
+2801="&Aggiungi codice"
+2802="Il codice inserito è già bloccato"
+; main form strings
+2803="E' necessario inserire una Chiave Hardware"
+2804="Il codice di registrazione è valido"
+2805="Data di scadenza:"
+2806="Il codice di registrazione NON è valido"
+2807="Valore personalizzato:"
+2808="Il file di lingua selezionato è stato realizzato per una versione precedente, alcune parti del programma potrebbero non essere tradotte."
+2809="Copia negli appunti"

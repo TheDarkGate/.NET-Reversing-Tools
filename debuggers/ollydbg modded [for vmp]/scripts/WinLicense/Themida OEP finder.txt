@@ -1,0 +1,61 @@
+//Themida OEP finder
+//Created by Psycho GSM Destroyer
+//////////////////////////////////////
+var eaxold
+var ecxold
+var edxold
+var ebxold
+var espold
+var ebpold
+var esiold
+var ediold
+var ZwFreeVirtualMemory
+gpa "ZwFreeVirtualMemory", "ntdll.dll"
+mov ZwFreeVirtualMemory, $RESULT
+gmi eip,CODEBASE
+mov codesec, $RESULT
+gmi eip,CODESIZE
+mov codesize, $RESULT
+///////////////////////////////////////
+run:
+mov eaxold,eax
+mov ecxold,ecx
+mov edxold,edx
+mov ebxold,ebx
+mov espold,esp
+mov ebpold,ebp
+mov esiold,esi
+mov ediold,edi
+bp ZwFreeVirtualMemory
+esto
+//////////////////////////////////////
+compare:
+cmp eax,eaxold
+jne run
+cmp ecx,ecxold
+jne run
+cmp edx,edxold
+jne run
+cmp ebx,ebxold
+jne run
+cmp esp,espold
+jne run
+cmp ebp,ebpold
+jne run
+cmp esi,esiold
+jne run
+cmp edi,ediold
+jne run
+bc ZwFreeVirtualMemory
+bprm codesec,codesize
+run
+bpmc
+bphwc
+log "OEP found"
+log "Created by Psycho GSM Destroyer"
+log "crackinggsm.blogspot.com"
+log "have a fun guys"
+cmt eip,"OEP or First Execution in CodeSection"
+msg "Thanks for using my script. \r\n Hope it will work find \r\n Created by Psycho GSM Destroyer \r\n http://crackinggsm.blogspot.com"
+pause
+ret

@@ -1,0 +1,56 @@
+//Themida Step in OEP Script
+///////////////////////////////////////////////
+var preveax
+var prevecx
+var prevedx
+var prevebx
+var prevesp
+var prevebp
+var prevesi
+var prevedi
+var ZwFreeVirtualMemory
+gpa "ZwFreeVirtualMemory", "ntdll.dll"
+mov ZwFreeVirtualMemory, $RESULT
+gmi eip,CODEBASE
+mov codesec, $RESULT
+gmi eip,CODESIZE
+mov codesize, $RESULT
+//////////////////////////////////////////////
+run:
+mov preveax,eax
+mov prevecx,ecx
+mov prevedx,edx
+mov prevebx,ebx
+mov prevesp,esp
+mov prevebp,ebp
+mov prevesi,esi
+mov prevedi,edi
+bp ZwFreeVirtualMemory
+erun
+/////////////////////////////////////////////
+compareprev:
+cmp eax,preveax
+jne run
+cmp ecx,prevecx
+jne run
+cmp edx,prevedx
+jne run
+cmp ebx,prevebx
+jne run
+cmp esp,prevesp
+jne run
+cmp ebp,prevebp
+jne run
+cmp esi,prevesi
+jne run
+cmp edi,prevedi
+jne run
+bc ZwFreeVirtualMemory
+bprm codesec,codesize
+run
+bpmc
+log "You are Stepping in OEP at this point"
+cmt eip,"OEP reached - This is the first Instruction of your unpacked target"
+msg "You are at the OEP of your target. \r\n You may begin cracking it. \r\n"
+pause
+ret

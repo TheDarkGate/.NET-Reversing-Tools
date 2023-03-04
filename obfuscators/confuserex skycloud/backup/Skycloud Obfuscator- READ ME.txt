@@ -1,0 +1,34 @@
+Welcome to Skycloud.Net Obfuscator v1.2
+
+Best pre-set methods : 
+Pattern : True 
+Preset : Maximun 
+Reduce md : Remove
+Ref proxy : May have to Remove if JTAG / RGH Tool
+Rename : May have to remove if JTAG / RGH Tool
+Packer : Disabled
+Inherit protections : Enabled
+
+Using this method, it will protect you from De4dot, Codecrackers tools & Decompliers ( DNSPY, JETBRAINS, .NETReactor ect. )
+Sometimes its best to just have a play around with the options to figure whats best to support your project!
+
+Before protection : 
+http://prntscr.com/dz3a7z
+
+After Protection : 
+http://prntscr.com/dz3bwz
+https://gyazo.com/10a3f5a289b6ab2724405e9a0a6d350f
+https://gyazo.com/708119edc9e5a3544491dd6dd471def6
+https://gyazo.com/03acd7517d8bfc591ce7eab174923c13
+https://gyazo.com/e3679a1ce78e28538b0f24f3f867a887
+https://gyazo.com/9e88b8a3548af62da7580208ffbed975
+
+Note : 
+If your settings / strings are not cryted, that is because you have had to removed rename. 
+However its still protected with alot of ecryption, Control flow, anti tamper, anti debug, anti dump ect.
+
+If you need more time or have any issues with our obfstruction please contact SkieHacker
+
+[ Discord ] SkieHacker[YT]#8739
+[ Email   ] Kerlemmorsti@gmail.com
+ 

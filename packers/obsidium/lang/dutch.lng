@@ -1,0 +1,503 @@
+[Info]
+LanguageName="Dutch"
+Charset="utf-8"
+Version="1.3"
+
+[frmMain]
+; main window
+Caption="Obsidium Software Protection systeem"
+
+; page selection buttons
+1000.Tooltip="Laden/Opslaan van project bestanden"
+1001.Tooltip="Project instellingen wijzigen"
+1002.Tooltip="Sleutel management"
+1003.Tooltip="Bescherm deze applicatie"
+1004.Tooltip="Over dit programma"
+
+; toolbuttons
+1005.Tooltip="Nieuw project bestand aanmaken"
+1006.Tooltip="Project bestand laden"
+1007.Tooltip="Project bestand opslaan"
+1008.Tooltip="Voorkeuren"
+
+; project management page
+1100.Caption="Project management"
+1101.Caption="Actie"
+1102.Caption="Informatie"
+1103.Caption="Nieuw Project"
+1103.Tooltip="Nieuw project aanmaken"
+1104.Caption="Nieuw project bestand aanmaken. Niet opgeslagen wijzigingen aan het huidige project zijn verloren."
+1105.Caption="Project laden"
+1105.Tooltip="Laad een bestaen project"
+1106.Caption="Een eerder opgeslagen project openen. Niet opgeslagen wijzigingen aan het huidige project zijn verloren."
+1107.Caption="Project opslaan"
+1107.Tooltip="Huidige project opslaan"
+1108.Caption="Huidige project opslaan voor later gebruik."
+1109.Caption="Wanneer je Obsidium start moet je of een nieuw project bestand aanmaken, of een bestaen bestand inladen."
+
+; options page
+1200.Caption="Opties"
+1201.Caption="standaard\nGeavanceerd\nlicentie\nProefperiode\nBerichten"
+; basic settings
+1202.Caption="standaard instellingen"
+1203.Caption="Bronnen versleutelen"
+1203.Tooltip="Te versleutelen bronmap (aanbevolen)"
+1204.Caption="Compressie"
+1204.Tooltip="Schakelt executable compressie in"
+1205.Caption="Verwijder exports"
+1205.Tooltip="Verwijder exports uit executable"
+1206.Caption="Behoud overlays"
+1206.Tooltip="Behoud alle data die aan de executable toegevoegd is"
+1207.Caption="Beheer toegang tot overlay"
+1207.Tooltip="Controleer en beheer toegang tot overlay data"
+1208.Caption="Versleutel overlays"
+1208.Tooltip="Versleutel overlay data"
+1209.Caption="Debugger controles"
+1209.Tooltip="Controleer op debuggers (aanbevolen)"
+1210.Caption="Geen detectie bericht"
+1210.Tooltip="Onderdruk debugger detectie bericht"
+1211.Caption="Applicatie Wachtwoord"
+1211.Tooltip="Wanneer aangevinkt, start de applicatie enkel na het invoeren van een wachtwoord"
+1212.Tooltip="Voer applicatie wachtwoord hier in"
+1213.Caption="Stel omgevings variabelen in"
+1213.Tooltip="Sla bescherm paramaters op in omgevingsvariabelen"
+1214.Caption="Verberg omgevings variabelen"
+1214.Tooltip="Verberg omgevings variabelen van monitoring tools"
+1215.Caption="Koppel licentie aan systeem"
+1215.Tooltip="licentie sleutels zullen enkel geldig zijn voor een specifiek systeem"
+1216.Caption="CPU"
+1216.Tooltip="Voeg CPU toe aan systeem ID"
+1217.Caption="Harde schijf"
+1217.Tooltip="Voeg harde schijf toe aan systeem ID"
+1218.Caption="Besturingssysteem"
+1218.Tooltip="Voeg besturingssysteem toe aan systeem ID"
+1219.Caption="MAC adres"
+1219.Tooltip="Voeg het MAC adres van de hoofdnetwerk kaart toe aan systeem ID"
+; advanced settings
+1220.Caption="Geavanceerde instellingen"
+1221.Caption="Afbeelding niet realloceren"
+1221.Tooltip="Dwing originele afbeelding basis (inschakelen voor probleemoplossing)"
+1222.Caption="Verwijder bytes bij OEP"
+1222.Tooltip="Verwijder eerste instructies bij het begin punt van de applicatie (uitschakelen voor probleemoplossing)"
+1223.Caption="Toon geen foutmeldingen"
+1223.Tooltip="Onderdruk boodschappen in het geval van een probleem"
+1224.Caption="Leeg ongebruikte variabelen"
+1224.Tooltip="Verwijder ongebruikte resources (Delphi-specifeke opties)"
+1225.Caption="Delphi/BCB obfuscation"
+1225.Tooltip="Delphi/BCB obfuscation (zie documentatie)"
+1226.Caption="Dynam. bescherming API toegang"
+1226.Tooltip="Sta dynamische toegang tot de beschermings API toe via LoadLibrary/GetProcAddress"
+1227.Caption="Runtime patching"
+1227.Tooltip="Patching van de code van de executable's code tijdens runtime (uitschakelen voor probleemoplossing)"
+1228.Caption="Runtime tracing"
+1228.Tooltip="Tracing van de code van de executable's code tijdens runtime (uitschakelen voor probleemoplossing / versnelling van runtime)"
+1229.Caption="Controleer versleutelde secties"
+1229.Tooltip="Controleer versleutelde secties op wijzigingen"
+; licentie settings
+1230.Caption="licentie instellingen"
+1231.Caption="licentie sleutel locatie:"
+1232.Caption="sleutelbestand"
+1232.Tooltip="licentie sleutels worden in een bestand opgeslagen (specifeer naam hieronder)"
+1233.Caption="registry (huidige gebruiker)"
+1233.Tooltip="licentie sleutels worden in de registry opgeslagen"
+1234.Caption="registry (alle gebruikers)"
+1234.Tooltip="licentie sleutels worden in de registry opgeslagen"
+1235.Caption="Naam van sleutelbestand:"
+1236.Tooltip="Voer het gewenste sleutelbestandsnaam hier in"
+1237.Caption="Vereist een valide licentie sleutel om te starten"
+1237.Tooltip="Een valide licentie sleutel is vereist om te starten wanneer ingeschakeld"
+; time trial settings
+1238.Caption="Verloopt op"
+1238.Tooltip="Aanvinken om de applicatie te laten verlopen op een specifieke datum"
+1239.Tooltip="Kies hier een verloop datum"
+1240.Caption="Gelimiteerd aantal:"
+1240.Tooltip="Aanvinken om de applicatie te laten verlopen na een aantal maal starten na installatie dat door de gebruiker is gekozen"
+1241.Tooltip="Voer het aantal maal hier in"
+1242.Caption="Toon eigen 'zeur' scherm bij het opstarten"
+1242.Tooltip="Toon eigen 'zeur'scherm bij het opstarten van het programma (zie documentatie)"
+1243.Caption="Selecteer"
+1243.Tooltip="Selecteer dialoog bestand"
+1244.Caption="Vertraag in seconden:"
+1245.Caption="Gelimiteerd aantal dagen:"
+1245.Tooltip="Aanvinken om de applicatie een specifiek aantal dagen na installatie te laten verlopen"
+1246.Caption="Sta applicatie toe om te verlopen"
+1246.Tooltip="Applicatie start nog steeds na verlopen, zie documentatie voor details"
+1247.Caption="Sta nieuwe proefperiode toe, versie"
+1247.Tooltip="Sta een nieuwe proefperiode toe as er een nieuwe versie van de applicatie wordt geinstalleerd"
+1248.Tooltip="Voer huidige versienummer hier in"
+1249.Caption="Verwijder proefperiode data"
+1249.Tooltip="Verwijder proefperiode data van deze computer"
+1259.Tooltip="Voer aantal dagen hier in"
+1260.Caption="Proefperiode instellingen"
+; Berichts settings
+1250.Caption="Eigen berichten"
+1251.Caption="Debugger ontdekt:"
+1252.Caption="Proefperiode verlopen:"
+;
+1253.Caption="Kies bericht:"
+1254.Caption="Debugger ontdekt\nProefperiode verlopen\nlicentie vereist\nbestand integreit probleem\nGeheugen toewijzingsfout\nDLL laad probleem\nImporteer probleem\nImport ordinal problem\nIntern probleem"
+1255.Caption="Kopregel:"
+1256.Tooltip="Voer de kopregel van het bericht hier in"
+1257.Caption="Bericht"
+1258.Tooltip="Voer de bericht tekst hier in"
+
+
+; sleutel management page
+1300.Caption="sleutel management"
+1301.Caption="Gebruik intern licentie systeem"
+1301.Tooltip="Aanvinken om het Obsidium licentie systeem te gebruiken"
+1302.Caption="Gebruik extern licentie systeem"
+1302.Tooltip="Selecteer deze optie als je applicatie al een betrouwbaar licentie systeem gebruikt"
+1303.Caption="Intern licentie systeem"
+1304.Caption="Aanmaken versleutelsleutels"
+1304.Tooltip="Aanmaken symmetrische en asymmetrische versleutelingssleutels"
+1305.Caption="512 bits\n768 bits\n1024 bits\n1536 bits\n2048 bits"
+1305.Tooltip="Selecteer je gewenste sleutelgrootte"
+1306.Caption="Voordat je de versleutelings sleutel genereert, selecteer de gewenste sleutelgrootte aan de linkerkant. Het genereren van een sleutel kan enige tijd in beslag nemen."
+1307.Caption="sleutelbestand blacklisting"
+1308.Caption="sleutelbestand blacklist"
+1308.Tooltip="Tonen/toevoegen/verwijderen blacklisted sleutelbestanden"
+1309.Caption="Klik op de 'sleutelbestand blacklist' knop om de lijst met huidige blacklisted sleutelbestanden te zien en regels toe te voegen / verwijderen ."
+1310.Caption="sleutelbestand aanmaken"
+1311.Caption="Aanmaken sleutelbestand"
+1311.Tooltip="Toon sleutelbestand aanmaken dialoogvenster"
+1312.Caption="Klik op de 'Aanmaken sleutelbestand' knop om het sleutelbestand aanmaken dialoogvenster te tonen, waar je textuele en binaire sleutels aan te maken voor dit project."
+1313.Caption="sleutel aanmaken bezig. Dit kan enkele minuten duren, afhankelijk van de geselecteerde sleutelgrootte en je CPU snelheid."
+1315.Caption="Extern licentie systeem"
+1316.Caption="Deze sleutel zal gebruikt worden om gemarkeerde secties in de brondcode te versleutenl. Zie de documentatie voor meer details."
+1317.Caption="Laad sleutel"
+1317.Tooltip="Laad versleutelingssleutel uit bestand"
+1318.Caption="Externe sleutel aanwezig"
+
+; protection page
+1400.Caption="Bescherming"
+1401.Caption="Instellingen\nExecutables"
+1402.Caption="Uitvoer map:"
+1403.Caption="Selecteer"
+1403.Tooltip="Selecteer uitvoer map"
+1404.Tooltip="De beschermings status wordt hier getoond"
+1405.Caption="Afbreken bij probleem"
+1405.Tooltip="Breek bescherming af wanneer een er zicht een probleem voordoet (wanneer je meerdere bestanden beschermd)"
+1406.Caption="Bescherm alle"
+1406.Tooltip="Bescherm alle executable bestanden"
+1407.Caption="Invoer bestand\nRelatieve uitvoer map"
+1408.Caption="Toevoegen"
+1408.Tooltip="Voeg bestand toe aan lijst"
+1409.Caption="Wijzigen"
+1409.Tooltip="Wijzig bestandnamen"
+1410.Caption="Beschermen"
+1410.Tooltip="Bescherm geselecteerd bestand"
+1411.Caption="Verwijderen"
+1411.Tooltip="Verwijder het geselecteerde bestand uit de lijst"
+
+; about page
+1500.Caption="Over Obsidium"
+1501.Caption="Deze kopie van Obsidium is geregistreerd door:"
+1502.Caption="Registreer"
+1502.Tooltip="Voer registratie code in"
+
+
+[frmBlacklist]
+; blacklisted sleutelbestands
+Caption="Blacklisted sleutelbestanden"
+
+1000.Caption="Hash\nlicentie info"
+1000.Tooltip="Lijst van blacklisted sleutelbestanden"
+1001.Caption="Toevoegen sleutelbestand"
+1001.Tooltip="Voeg een sleutelbestand toe aan de blacklist"
+1002.Caption="Toevoegen tekstuele sleutel"
+1002.Tooltip="Voeg een tekstuele sleutel toe aan de blacklist"
+1003.Caption="Verwijderen sleutelbestand"
+1003.Tooltip="Verwijder het geselecteerde sleutelbestand uit de lijst"
+1004.Caption="Sluiten"
+1004.Tooltip="Sluiten this dialog"
+
+
+[frmEnterKey]
+; dialog for entering text sleutels
+Caption="licentie sleutel"
+
+1000.Caption="OK"
+1000.Tooltip="Sluiten dialoogvensten"
+1001.Caption="Annuleren"
+1001.Tooltip="Afbreken, en dialoogvenster sluiten"
+
+
+[frmFileSelect]
+; bestand selection dialog
+Caption="Selecteer bestanden"
+
+1000.Caption="Selecteer bestanden"
+1001.Caption="Invoer bestand:"
+1002.Caption="Relatieve uitvoer map:"
+1003.Caption="Selecteer"
+1004.Caption="Selecteer"
+1005.Caption="OK"
+1006.Caption="Annuleren"
+
+
+[frmKeygen]
+; licentie sleutel generation dialog
+Caption="sleutelbestand aanmaken"
+
+1000.Caption="licentie informatie"
+1001.Tooltip="Additionele informatie opgeslagen in het sleutelbestand (31 tekens max)"
+1002.Tooltip="Additionele informatie opgeslagen in het sleutelbestand (127 tekens max)"
+1003.Caption="Systeem ID"
+1004.Tooltip="licentie zal gekoppeld worden aan dit systeem ID"
+1005.Caption="Opties"
+1006.Caption="Enkel bestand"
+1006.Tooltip="Alleen als sleutelbestand aanmaken"
+1007.Caption="Enkel tekst"
+1007.Tooltip="Licentie data enkel als tekst aanmaken"
+1008.Caption="Beide"
+1008.Tooltip="Zowel sleutelbestand als text data aanmaken"
+1009.Caption="sleutelbestand verloopt op:"
+1010.Tooltip="Aanvinken en selecteer een datum om een tijdsbeperkt sleutelbestand aan te maken"
+1011.Caption="Aanmaken"
+1011.Tooltip="Aanmaken licentie sleutel"
+1012.Caption="Sluiten"
+1012.Tooltip="Sluit dit dialoogvenster"
+
+
+[frmPreferences]
+; preferences dialog
+Caption="Voorkeuren"
+
+1000.Caption="Mappen"
+1001.Caption="standaard project bestandsmap"
+1002.Caption="Selecteer"
+1003.Caption="Opties"
+1004.Caption="Sla automatisch project bestanden op bij afsluiten applicatie"
+1005.Caption="OK"
+1006.Caption="Annuleren"
+1007.Caption="Interface taal"
+
+
+[frmProjectname]
+Caption="Project/Applicatie naam"
+
+1000.Caption="Voer een unieke naam (de naam van je applicatie) voor dit project. Deze naam is enkel voor intern gebruik en kan niet achteraf gewijzigd worden."
+1001.Caption="OK"
+
+
+[frmRegister]
+Caption="Registreer Obsidium"
+
+1000.Caption="Kopieer a.u.b. uw registratie code en plak deze hier."
+1001.Caption="OK"
+1001.Tooltip="Accepteer registratie code"
+1002.Caption="Annuleren"
+1002.Tooltip="Afbreken en dit dialogvenster afsluiten"
+
+
+[frmShowKey]
+; dialog showing Aanmakend licentie sleutels
+Caption="licentie sleutel"
+
+1000.Caption="Opslaan in bestand"
+1000.Tooltip="Schrijf licentie data naar een tekst bestand"
+1001.Caption="Kopieer naar clipboard"
+1001.Tooltip="Kopieer licentie data naar clipboard"
+1002.Caption="Sluiten"
+1002.Tooltip="Sluit dialog"
+
+
+[Strings]
+; standaard Bericht captions
+3000="Melding"
+3001="Probleem"
+
+2001="Geheugen allocatie Probleem."
+2002="Bestands I/O Probleem."
+
+; blacklist dialog strings
+2000="Probleem lezen sleutelbestand."
+2003="Kan sleutelbestand niet openen."
+2004="sleutelbestand is al blacklisted."
+2005="Invalide sleutelbestand."
+2006="Toegevoegd "
+2007=" sleutels aan de blacklist"
+; blacklist popup menu
+2008="Verwijde&r sleutelbestand"
+2009="Toevoegen sleutelbest&and"
+2010="Toevoegen &tekstuele sleutel"
+2011="Toevoegen vanuit bestand"
+2012="Vervangen vanuit bestand"
+
+; enter sleutel dialog strings
+2100="The tekstuele sleutel lijkt niet te kloppen."
+
+; bestand selection dialog strings
+2200="Melding: bestandsextensies verschillen."
+2201="Waarschuwing: Niet een valide relatieve map:"
+
+; sleutel generation dialog strings
+2300="Voer a.u.b. een systeem ID om."
+2301="Het systeem ID dat u hebt ingevoerd is invalide."
+2302="Kan sleutelbestand moet aanmaken!"
+2303="Probleem tijdens het schrijven naar sleutelbestand!"
+2304="Kan sleutelbestand niet converteren naar tekstuele sleutel!"
+2305="U heeft geen informatie ingevoerd. Toch doorgaan?"
+
+; project naam dialog strings
+2400="Voer a.u.b. tenminste 5 tekens in."
+
+; registration dialog strings
+2500="Start a.u.b. Obsidium opnieuw op om het registratie proces af te ronden."
+2501="Onjuiste registratie code."
+
+; dialog showing Aanmakend licentie sleutels
+2600="Probleem tijdens het schrijven naar bestand!"
+2601="Kan bestand niet aanmaken!"
+
+; main window strings
+1000="Sorry, het laden van project bestanden is uitgeschakeld in de demo versie."
+1001="Geladen vanuit project bestand"
+1002="Debugger ontdekt - gaarne deze afsluiten en de applicatie opnieuw opstarten."
+1003="Uw proefperiode is verstreken."
+1004="Nieuw project aanmaken?"
+1005="Het project bestand is geconverteerd uit een oud formaat, gaarne het heropenen."
+1006="Kan het projectbestand niet converteren uit oude versie."
+1007="Kan project bestand niet openen."
+1008="Bescherming is nu bezig, uw project wordt niet opgeslagen. Toch afsluiten?"
+1009="sleutel aanmaken is nu bezig, uw project wordt niet opgeslagen. Toch afsluiten?"
+1010="Huidige project opslaan voor afsluiten?"
+1011="Bescherming succesvol!"
+1012="Kan invoer bestand niet openen"
+1013="Kan uitvoer bestand niet aanmaken"
+1014="Invalide invoer bestand"
+1015="Neet ondersteund invoer bestand"
+1016="Probleem met schrijven naar uitvoer bestand"
+1017="Probleem met het toewijzen van geheugen"
+1018="Probleem met het omgaan met resources"
+1019="Probleem met het omgaan met exports"
+1020="Probleem met het omgaan met imports"
+1021="Probleem schrijven/aanmaken beschermingscode"
+1022="Probleem met het omgaan met TLS"
+1023="Bestand lijkt reeds beschermd / ingepakt"
+1024="Onbekend probleem"
+1028="Geen uitvoer map geselecteerd"
+1029="Geen sleutelbestandsnaam gespecificeerd, gebruikt standaardnaam"
+1030="Invalide systeem koppelings opties"
+1031="Geen valide relatieve map"
+1032="Project instellingen verzamelen"
+1033="Uitvoeren bestand "
+1034="Beschermen bestand "
+1035="Aanmaken uitvoer bestand..."
+1036="Openen invoer bestand..."
+1037="Controle invoer bestand..."
+1038="Omgaan met exports..."
+1039="Omgaan met imports..."
+1040="Omgaan met resources..."
+1041="Omgaan met TLS..."
+1042="Aanmaken/schrijven beschermings code..."
+1043="Versleutelings markering gevonden op RVA 0x"
+1044="Probleem: Niet ondersteunde call markering."
+1045="Probleem: Open runtime versleutelings markering."
+1046="Gevonden runtime versleutelings markering."at RVA 0x"
+1047="Kritieke fout bij laden DLL "
+1048="Zorg a.u.b. dat alle benodigde DLLs geladen kunnen worden door Obsidium."
+1049="Probleem: Geneste versleutelings markering op RVA 0x"
+1050="Comprimeren sectie, 0x"
+1051=" bytes"
+1052="Gecomrpimeerde grootte 0x"
+1053="Tip: Gebruik runtime versleuteling om de beveiliging te verbeteren."
+1054="WAARSCHUWING: Invoer bestand lijkt samengepakt."
+1055="Voer a.u.b. een valide versie nummer in.\nVoorbeelden van valide nummers: 1, 1.0, 2.5"
+1056="Voer a.u.b. een valide datum in."
+1057="Voer a.u.b. een valide aantal gebruiken in."
+1058="Kan bestand niet lezen."
+1059="bestand heeft geen dialoog data."
+1071="De ingevoerde bericht tekst is invalide. Kijk a.u.b. in de documentatie voor meer informatie."
+
+; protected bestands popup menu
+1060="&Toevoegen"
+1061="&Wijzigen"
+1062="&Beschermen"
+1063="&Verwijderen"
+
+1064="Verdubbel de regel voor dit bestand."
+1065="Selecteer a.u.b. de uitvoer map voor het project die gebruikt kan worden voor beschermde/versleutelde bestanden."
+1066="versleuteling succesvol"
+1067="Probleem tijdens het versleutelen van bestand"
+1068="Weet u zeker dat u deze regel wilt verwijderen?"
+1069="Proeftijd is verwijderd."
+
+; open project bestand popup menu
+1070="Open project bestand..."
+
+
+; --- strings added in version 1.3 ---
+
+[frmEnterShortKey]
+Caption="Voer verkorte licentie sleutel in"
+1000.Caption="licentie info:"
+1001.Caption="licentie sleutel:"
+1002.Caption="OK"
+1002.Tooltip="Sluiten dialoogvenster"
+1003.Caption="Annuleren"
+1003.Tooltip="Afbreken en dialoogvenster sluiten"
+
+[frmBlacklistShort]
+Caption="Blacklist licentie sleutels"
+1000.Caption="Toevoegen licentie"
+1000.Tooltip="Voeg een licentie sleutel toe aan de blacklist"
+1001.Caption="Verwijderen licentie"
+1001.Tooltip="Verwijder de geselecteerde licentie sleutel van de lijst"
+1002.Caption="Sluiten"
+1002.Tooltip="Sluiten dialoogvenster"
+1003.Caption="Hash\nlicentie info"
+1003.Tooltip="Lijst van huidige blacklisted licentie sleutels"
+
+[frmMain]
+; sleutel management page
+1319.Caption="Intern systeem\nIntern systeem (verkorte sleutels)\nExtern systeem"
+1319.Tooltip="Selecteer het licentie systeem dat in project gebruikt wordt"
+1320.Caption="Om meer te weten te komen over de verschillende licentie systemen, zie de documentatie."
+1321.Caption="Intern licentie systeem (verkorte sleutels)"
+1322.Caption="Aanmaken versleutelingssleutels"
+1322.Tooltip="Aanmaken asymmetrisch en asymmetrische versleutelings sleutels"
+1323.Caption="kort\nmidden\nlang"
+1323.Tooltip="Selecteer de gewenste sleutelgrootte"
+1324.Caption="Voordat je versleutelings sleutels aanmaakt, kies een gewenste sleutelgrootte aan de linkerkant."
+1325.Caption="Blacklist"
+1326.Caption="sleutel blacklist"
+1326.Tooltip="Toevoegen/wijzigen/Verwijderen blacklisted licentie sleutels"
+1327.Caption="Druk op de 'sleutel blacklist' knop om de lijst van huidige geblackliste sleutels te zien en regels toevoegen /verwijderen."
+1328.Caption="sleutel aanmaken"
+1329.Caption="licentie informatie:"
+1330.Caption="licentie sleutel:"
+1331.Caption="Aanmaken sleutel"
+1331.Tooltip="Aanmaken nieuw licentie sleutel volgens huidige paramters"
+1332.Caption="Controleer sleutel"
+1332.Tooltip="Controleer licentie sleutel volgens huidige parameters"
+1333.Caption="systeem ID:"
+1334.Caption="Aanmaken geavanceerde sleutel"
+1334.Tooltip="Aanmaken geavanceerde licentie sleutels (see documentation)"
+1335.Caption="sleutel verloop datum:"
+1336.Tooltip="Voer licentie informatie (gebruikersnaam) hier in"
+1337.Tooltip="licentie sleutel verloop datum"
+1338.Tooltip="The licentie sleutel zal gekoppeld worden aan dit systeem ID"
+1339.Caption="Kopieer sleutel"
+1339.Tooltip="Kopieer de aangemaakte sleutel naar het clipboard"
+1440.Caption="Eigen waarde:"
+1441.Tooltip="Voer de sleutels eigen waarde hier in (zie documentatie voor details)"
+; toolbuttons
+1009.Tooltip="Open help bestand"
+
+[Strings]
+; frmEnterShortsleutel strings
+2700="De licentie sleutel die u ingevoerd hebt lijkt onjuist of or systeem-specifiek te zijn, toch toevoegen?"
+; frmBlacklistShort strings
+2800="Verwijde&r licentie sleutel"
+2801="Toevoegen licentie sleutel"
+2802="licentie sleutel is reeds blacklisted"
+; main form strings
+2803="U moet een systeem ID invoeren"
+2804="De licentie sleutel is juist"
+2805="Verloop datum:"
+2806="De licentie sleutel is onjuist"
+2807="Eigen waarde:"
+2808="Het taalbestand is niet volledig bijgewerkt, sommige delen van de applicatie zullen niet vertaald zijn."
+2809="Kopieer naar clipboard"

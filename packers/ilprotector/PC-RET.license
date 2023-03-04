@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<activation version="1.0">
+  <SystemInfo>
+  <Product value="1">ILProtector</Product>
+    <SystemInfo value="1">1</SystemInfo>
+	<OperatingSystem value="1">1</OperatingSystem>
+	<Manufacturer value="1">1</Manufacturer>
+	<Model value="1">1</Model>
+	<Processor value="1">1</Processor>
+	<MachineName value="1">PC-RET</MachineName>
+	<Product value="1">1</Product>
+  </SystemInfo>
+  <License Version="1.0" Type="Single Developer License">
+    <License value="1"></License>
+    <MachineID Value="1"></MachineID>
+	<ProductID Value="XXXXX"></ProductID>
+	<LicensedVersion Value="2.0.18.1"></LicensedVersion>
+	<ExpirationDate Value="1"></ExpirationDate>
+	<MachineBindings>
+	<Group value="1" Key="1"></Group>
+	</MachineBindings>
+  </License>
+  <Signature>
+  <Hash value="1">MDUxNWFjNDIxNmE0ZDg0NDVlYWNlMzE4NzBiMjY1YTJmZTBhNWE1Mg==</Hash>
+  </Signature>
+</activation>

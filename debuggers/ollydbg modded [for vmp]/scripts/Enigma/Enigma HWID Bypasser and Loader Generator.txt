@@ -1,0 +1,44 @@
+bc
+bphwc
+bpmc
+lc
+GPI PROCESSNAME
+mov pname, $RESULT
+pusha
+gmi eip, MODULEBASE
+mov MODULEBASE, $RESULT
+mov eax, $RESULT
+mov edi, eax
+add eax, 3C
+mov eax, edi+[eax]
+mov SECTIONS, [eax+06], 02
+mov esi, eax+0F8
+mov edi, 28
+mov ebp, SECTIONS
+mov ecx, edi
+mul edi, SECTIONS
+add edi, esi
+sub edi, 28
+mov LASTSECTION, [edi+0C]
+add LASTSECTION, MODULEBASE
+sub edi, 28
+mov ENIGMASECTION, [edi+0C]
+add ENIGMASECTION, MODULEBASE
+popa
+gpa "VirtualFree", "kernel32.dll"
+bp $RESULT
+esto
+log "Bypassing the HWID"
+log "Created by GautamGreat"
+bc
+log "Finding Bytes for Adavance Loader Generator"
+find ENIGMASECTION, #558BEC83C4E0535633D2#
+find $RESULT, #74????????????????????????????EB??#
+mov [$RESULT], #75#
+mov hwidva, $RESULT
+eval "VA Found : {$RESULT}"
+log $RESULT,""
+log "OLD Byte : 75 , New Byte : 74"
+log "Made in India"
+msg "HWID Patched"
+ret
